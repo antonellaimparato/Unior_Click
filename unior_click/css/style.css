@@ -1,0 +1,70 @@
+* {   /*Seleziona (universal selector(*)) tutti gli elementi HTML nella pagina.La regola CSS seguente avrà effetto su ogni elemento HTML della pagina */
+    box-sizing: border-box;  /*La box-sizing proprietà CSS definisce come calcolare la larghezza e l'altezza di un elemento. Se si imposta box-sizing: border-box; un elemento, il padding e il bordo vengono inclusi nel calcolo della larghezza e dell'altezza, e quindi è la scelta migliore*/
+    margin: 0;   /*Imposta il margine esterno a zero per tutti i lati.*/
+    padding: 0;  /*Imposta il padding interno a zero per tutti i lati.*/
+}
+html {
+    scroll-behavior: smooth;   /*Dona un effetto di scorrimento fluido al documento*/
+}
+body {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Arial, Verdana, sans-serif;  /*font-family specifica il font, e inserisco vari font in questo modo siamo sicuri che almeno uno il browser lo legge */
+
+    /* Sfondo animato */
+    background: linear-gradient(-45deg, #800000,#ff0000, #cc001f,#a60036); /*diagonale*/ /*sfumature di rosso*/
+    background-size: 500% 500%;  /*piu è grande l'immagine di sfondo piu si nota l'animazione/ le varie sfumature*/
+    animation: gradientbackground 5s ease infinite;
+    min-height: 100px;  /*definisce l'altezza minima di un elemento*/
+
+    color: #000000;
+    line-height: 1.6;  /*spazio verticale tra le righe*/
+}
+
+@keyframes gradientbackground {
+    0% { background-position: 0 50%; }  /*definisce l'elemento all'inizio dell'animazione*/
+    50% { background-position: 100% 50%; }    /*          //               a metà        (estrema destra) */
+    100% { background-position: 0 50%; }  /*              //              alla fine       (ritorna della posizione inziale) */
+}
+
+header { /*selettore di elemento che individua e applica uno stile all'elemento HTML header*/
+    background-image: url('../images/sfondo.jpeg '); /*(..) esci dalla cartella attuale, quindi css, (/) entra nella cartella images e prendi il file sfondo.jpeg*/
+    background-size: cover;  /*l'immagine copre l'intero spazio, anche se ciò comporta l'allungamneto o il taglio della stessa*/
+    background-position: center;
+    text-align:left;
+
+    /*  Aumentato il padding-top per "abbassare" il contenuto */
+    padding: 12rem 1.5rem 2rem; /*/(primo numero si riferisce allo spazio sopra, il secondo ai lati dx e sn, e l'ultimo al padding inferiore*/
+
+    position: relative
+}
+
+/* Overlay scuro per la leggibilità */
+header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima di header; Questo elemento funge da strato colorato sopra l'immagine di sfondo.*/
+    content: "";  /*specificare SEMPRE il contenuto da inserire; in questo caso stringa vuota*/
+    position: absolute;   /*è posizionato rispetto all'antenato posizionato più vicino (con posizione diversa da statica), quindi questo overlay si posizionerà rispetto all'header*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /*fondo della pagina*/
+    background: rgba(0, 0, 0, 0.3); /*Valore RGBA estensione del valore RGB con l'aggiunta dell'opacità*/
+    z-index: 1;  /*indica l'ordine di impilamento degli elementi selezionati, in questo caso lo sfondo è a livello 0 e l'overlay a livello 1*/
+}
+
+#logo {   /*selettore ID che utilizza l'attributo id di un elemento HTML per selezionare un elemento specifico-> elemento UNIVOCO dell'intera pagina*/
+    width: 120px; /*imposta la larghezza*/
+    height: 120px; /*imposta l'altezza*/
+    border-radius: 50%; /*arrotonda gli angoli*/
+    object-fit: cover; /*Definisce come l'immagine viene ridimensionata per adattarsi. Il valore "cover" fa in modo che l'immagine copra completamente l'area, ritagliando le parti in eccesso, senza distorcere l'immagine*/
+    margin-left: 5rem;
+    position: relative;
+    z-index: 2; /*livello di sovrapposizione, cioè metto il logo sopra all'overlay scuro*/
+
+}
+
+header h1 {
+    font-family: 'Georgia', serif;   /* Font personalizzato */
+    color: #ffffff;  /*colore esadecimale (#RRGGBB)*/
+    font-size: 1.8rem;
+    font-weight: 900;  /* (spessore) i valori arrivano fino a 900*/
+    position: relative;
+    z-index: 2;
+}
