@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo).">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,12 +19,12 @@
     &quot;assignee&quot;: &quot;antonellaimparato&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/antonellaimparato/Unior_Click.git&quot;,
-    &quot;accountId&quot;: &quot;0f365b0c-97c1-4f1d-ae49-69871e4390ad&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/antonellaimparato/Unior_Click.git",
+    "accountId": "0f365b0c-97c1-4f1d-ae49-69871e4390ad"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -78,8 +75,7 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
-      <workItem from="1767712304111" duration="3524000" />
-      <workItem from="1767776006437" duration="2637000" />
+      <workItem from="1767712304111" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -169,15 +165,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767712629686</updated>
     </task>
-    <task id="LOCAL-00012" summary="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo).">
-      <option name="closed" value="true" />
-      <created>1767712760881</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767712760881</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +186,6 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
-    <MESSAGE value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
   </component>
 </project>
