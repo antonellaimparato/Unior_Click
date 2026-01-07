@@ -19,7 +19,7 @@ body {
     line-height: 1.6;  /*spazio verticale tra le righe*/
 }
 
-@keyframes gradientbackground {
+@keyframes gradientbackground { /*"@keyframes" viene utilizzata per controllare i passaggi di una sequenza di animazione definendo stili CSS per i punti lungo la sequenza di animazione*/
     0% { background-position: 0 50%; }  /*definisce l'elemento all'inizio dell'animazione*/
     50% { background-position: 100% 50%; }    /*          //               a metà        (estrema destra) */
     100% { background-position: 0 50%; }  /*              //              alla fine       (ritorna della posizione inziale) */
@@ -55,7 +55,7 @@ header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima
     border-radius: 50%; /*arrotonda gli angoli*/
     object-fit: cover; /*Definisce come l'immagine viene ridimensionata per adattarsi. Il valore "cover" fa in modo che l'immagine copra completamente l'area, ritagliando le parti in eccesso, senza distorcere l'immagine*/
     margin-left: 5rem;
-    position: relative;
+    position: relative; /*necessario per la riga successiva, senza ciò la riga successiva verrebbe ignorata*/
     z-index: 2; /*livello di sovrapposizione, cioè metto il logo sopra all'overlay scuro*/
 
 }
@@ -67,4 +67,57 @@ header h1 {
     font-weight: 900;  /* (spessore) i valori arrivano fino a 900*/
     position: relative;
     z-index: 2;
+}
+
+/* Filtri e parte centrale  */
+main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine */
+    max-width: 1200px; /*definisce la larghezza massima di un elemento*/
+    margin: 2rem auto; /* 2rem-> superiore e inferiore; auto-> destra e sinistra, centra automaticamente l'elemento */
+    padding: 0 1rem; /* (spazio tra il contenuto e il bordo) 0->superiore e inferiore; 1rem-> destra e sinistra.La spaziatura laterale (1rem) serve a evitare che il contenuto si attacchi ai margini dello schermo*/
+}
+.filters-container {   /*(con il . iniziale->) Selettore di classe-> tutto ciò si applica a tutti gli elementi HTML con l'attributo class="filters-container".*/
+    display: grid;     /* contenitore griglia : elementi disponsti in riga e in colonna*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /*specifica il numero e la larghezza delle colonne in un layout a griglia. */
+                                                                  /* repeat-> ripete le colonne; auto-fit -> adatta il numero di colonne alla larghezza disponibile; */
+                                                                  /* minmax -> ogni colonna deve essere larga ALMENO 250px, ma se c'è spazio, si espande per riempire la frazione disponibile (1fr).*/
+    gap: 2rem;  /* Proprietà abbreviata per row-gap e column-gap (spazio tra righe e spazio tra colonne) */
+    margin-bottom: 2rem; /*margine inferiore*/
+}
+.filter-item { /* selettore di classe (.) */
+    display: flex;   /*trasforma l'elemento in un contenitore flessibile a livello di BLOCCO (l'altra alternativa può essere inline-flex)*/
+    flex-direction: column; /*specifica la direzione di visualizzazione degli elementi flessibili nel contenitore flessibile*/
+}
+.filter-item label {  /* selettore di classe -> si riferisce al menu a tendina, cioè alle scritte "cerca" e "mostra vicine a"*/
+    font-weight: 700;  /*spessore dei caratteri*/
+    font-size: 1rem;
+    margin-bottom: 0.5rem; /* margine inferiore*/
+    color: #FFFFFF;        /*bianco*/
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /*aggiunge ombra al testo. Ombra orizzontale e verticale, con effetto colore e sfocatura (in rgba lo 0.2 rende piu trasparente/sottile il nero)*/
+}
+
+/*Si riferisce ai "rettangoli" sotto cerca e mostra vicino a*/
+#search-bar, /*selettore ID*/
+#sede-filter {
+    width: 100%; /*larghezza*/
+    padding: 12px; /*spazio tra il contenuto e il bordo*/
+    font-size: 1rem;
+    border: 1px solid rgb(255, 255, 255); /*spessore, solido(continuo), bianco*/
+    border-radius: 10px;          /*definisce il raggio degli angoli dell'elemento (li arrotonda)*/
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);     /*applica un effetto grafico all'area dietro un elemento. blur -> applica un effetto sfocatura*/
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Arial, Verdana, sans-serif;
+    color: #000000;
+}
+
+#search-bar:focus, /*:FOCUS è una pseudo-classe, che viene utilizzata per selezionare e definire lo stile dell'elemento su cui viene attivato il focus,
+                      cioè si attiva solo quando l'elemento viene cliccato*/
+#sede-filter:focus {
+    outline: none;  /*outline definisce lo stile del CONTORNO; none-> Non definisce alcun contorno (senza ciò si mette in automatico il bordo del browser)*/
+    border: 1px solid rgba(255, 255, 255, 0.7);  /* 0.7 -> opacità*/
+}
+
+::placeholder {  /*pseudo-elemento (ci sono due ::, e non uno solo di :, quindi è un pseudo-elemento e non pseudo-classe;
+                  modifica il colore e l'opacità del testo*/
+    color: #000000;
+    opacity: 0.4;
 }
