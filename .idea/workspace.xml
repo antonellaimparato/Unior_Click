@@ -43,6 +43,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;disable.download.node.interpreter.editor.notification&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -72,7 +73,10 @@
       <workItem from="1767633047623" duration="610000" />
       <workItem from="1767633757470" duration="2638000" />
       <workItem from="1767645749327" duration="65000" />
-      <workItem from="1767690056807" duration="3098000" />
+      <workItem from="1767690056807" duration="5780000" />
+      <workItem from="1767699733454" duration="386000" />
+      <workItem from="1767700132300" duration="113000" />
+      <workItem from="1767700251163" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -140,17 +144,36 @@
     </task>
     <task id="LOCAL-00009" summary="ho aggiunto l'intestazione dell'html">
       <option name="closed" value="true" />
-      <created>1767702915766</created>
+      <created>1767695254219</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1767702915766</updated>
+      <updated>1767695254219</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ho aggiunto l'intestazione dell'html">
+      <option name="closed" value="true" />
+      <created>1767700018456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1767700018456</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aggiunto titolo" />
