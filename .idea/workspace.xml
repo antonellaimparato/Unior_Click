@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alla parte centrale, al blocco in generale, con i menu a tendina e i rettangoli sotto &quot;cerca&quot; e &quot;mostra vicine a&quot;.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,12 +19,12 @@
     &quot;assignee&quot;: &quot;antonellaimparato&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/antonellaimparato/Unior_Click.git&quot;,
-    &quot;accountId&quot;: &quot;0f365b0c-97c1-4f1d-ae49-69871e4390ad&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/antonellaimparato/Unior_Click.git",
+    "accountId": "0f365b0c-97c1-4f1d-ae49-69871e4390ad"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -167,15 +165,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767712629686</updated>
     </task>
-    <task id="LOCAL-00012" summary="Sono passata alla parte centrale, al blocco in generale, con i menu a tendina e i rettangoli sotto &quot;cerca&quot; e &quot;mostra vicine a&quot;.">
-      <option name="closed" value="true" />
-      <created>1767780001899</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767780001899</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +186,6 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
-    <MESSAGE value="Sono passata alla parte centrale, al blocco in generale, con i menu a tendina e i rettangoli sotto &quot;cerca&quot; e &quot;mostra vicine a&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alla parte centrale, al blocco in generale, con i menu a tendina e i rettangoli sotto &quot;cerca&quot; e &quot;mostra vicine a&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho iniziato ad impostare lo stile della pagina, concentrandomi sullo sfondo e il logo (quindi anche lo sfondo che c'è sotto il logo). Parliamo della parte superiore" />
   </component>
 </project>
