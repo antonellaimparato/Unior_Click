@@ -2,9 +2,9 @@
 // senza ciò cercheremo di modificare elementi che non esistono ancora.
 document.addEventListener('DOMContentLoaded', function() {
 
-    // const listaLocali, all'interno definiamo tutte le convenzioni come un array di oggetti dove ogni oggetto rappresenta un locale e contiene tutte le informazioni necessarie.
+    // const convenzioni, all'interno definiamo tutte le convenzioni come un array di oggetti dove ogni oggetto rappresenta un locale e contiene tutte le informazioni necessarie.
     // come ad esempio ID unico, offerta, tipo che serve per la ricerca, sede e cosi via. in più anche le coordinate lat/lng che servono per la mappa e navigatore
-    const listaLocali = [
+    const convenzioni = [
         // Sede: giusso
         { id: 1, nome: "Pappa e Pizza🍕", indirizzo: "Via Enrico De Marinis 6, 80134 Napoli", offerta: "Coupon cumulabili per ricevere pizze o menù in omaggio. (Esibire la nostra card per avere quella coupon)", tipo: "cibo pizza", sede: "giusso", lat: 40.8461, lng: 14.2566 },
         { id: 2, nome: "Bar Orientale", indirizzo: "Largo Giusso Girolamo 2, 80134 Napoli", offerta: "Colazione: caffè + cornetto, cappuccino + cornetto. Pranzo: consumazione + bibita. 10% di sconto sui tavoli (sempre).", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84573, lng: 14.25527 },
@@ -27,350 +27,57 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     // Qui catturiamo gli elementi della pagina HTML con la quale dovremo parlare, salvando ogni elemento in una variabile.
-    const griglia = document.getElementById('griglia-locali');  // qui è dove inseriamo le card (ex card-container)
-    const barraRicerca = document.getElementById('barra-ricerca');     // la barra di ricerca
-    const filtroSede = document.getElementById('filtro-sede');   // qui la tendina della ricerca
+    const cardContainer = document.getElementById('card-container');  // qui è dove inseriamo le card (ex griglia-locali)
+    const searchBar = document.getElementById('search-bar');     // la barra di ricerca
+    const sedeFilter = document.getElementById('sede-filter');   // qui la tendina della ricerca
 
     // Qui abbiamo i riferimenti all'interfaccia utente che riguardano le recensioni
-    const finestraRecensioni = document.getElementById('finestra-recensioni'); // Il modale
-    const tastoChiudiRecensioni = document.getElementById('tasto-chiudi-recensioni');
-    const titoloRecensioni = document.getElementById('titolo-recensioni');
-    const listaCommenti = document.getElementById('lista-commenti');  // qui tramite document.getElementById andiamo a cercare dentro HTML un elemento che ha ID 'lista-commenti' e serve per mostrarci successivamente i commenti che vengono scritti.
-    const moduloRecensione = document.getElementById('modulo-recensione');  // questo è il modulo che ci serve per scrivere il commento
-    const testoRecensione = document.getElementById('testo-recensione');  // qua abbiamo l'area del testo
-    const bloccoStelle = document.querySelector('.voto-stelle');  // bloccoStelle abbiamo una query che ci permette di cliccare sulle stelle per lasciare le recensioni.
+    const reviewModal = document.getElementById('review-modal'); // Il modale delle recensioni
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalTitle = document.getElementById('modal-title');
+    const reviewsListContainer = document.getElementById('reviews-list-container');  // qui tramite document.getElementById andiamo a cercare dentro HTML un elemento che ha ID 'reviews-list-container' e serve per mostrarci successivamente i commenti che vengono scritti.
+    const reviewForm = document.getElementById('review-form');  // questo è il modulo che ci serve per scrivere il commento
+    const reviewText = document.getElementById('review-text');  // qua abbiamo l'area del testo
+    const starRatingInput = document.querySelector('.star-rating-input');  // starRatingInput abbiamo una query che ci permette di cliccare sulle stelle per lasciare le recensioni.
 
     // Riferimenti all'interfaccia utente per le mappe
-    const finestraMappa = document.getElementById('finestra-mappa');
-    const titoloMappa = document.getElementById('titolo-mappa');
-    const tastoChiudiMappa = document.getElementById('tasto-chiudi-mappa');
-    let mappaLeaflet;  // variabile che ci serve per mantenere l'istanza della mappa Leaflet
+    const mapModal = document.getElementById('map-modal');
+    const mapModalTitle = document.getElementById('map-modal-title');
+    const mapCloseBtn = document.getElementById('map-close-btn');
+    let map;  // variabile che ci serve per mantenere l'istanza della mappa Leaflet
 
     // Variabile per tenere il voto che si mette alle stelle per le recensioni
-    let votoAttuale = 0;
+    let currentStarRating = 0;
 
     // qui creo l'HTML per una singola card
-    function creaCard(locale) {
-        // questo URL viene collegato al tasto 'Avvia Navigatore', creo la variabile linkNavigatore ci passo l'URL di maps e tramite il commando 'daddr' dico al dispositivo di calcolare il percorso
-        const linkNavigatore = `https://maps.google.com/maps?daddr=${locale.lat},${locale.lng}`;
+    function createCardHTML(convenzione) {
+        // questo URL viene collegato al tasto 'Avvia Navigatore', creo la variabile navUrl ci passo l'URL di maps e tramite il commando 'daddr' dico al dispositivo di calcolare il percorso
+        const navUrl = `https://maps.google.com/maps?daddr=${convenzione.lat},${convenzione.lng}`;
         // uso i backtick ovvero accenti gravi per poter inserire le variabili dentro HTML
-        // "data-id", "data-nome" ecc servono per nascondere queste informaioni dentro il bottone, cosi quando ci clicco sopra posso recuperarli facilmente poi nel codice.
+        // "data-id", "data-nome" ecc servono per nascondere queste informazioni dentro il bottone, cosi quando ci clicco sopra posso recuperarli facilmente poi nel codice.
         return `  
             <div class="card">
-                <h3>${locale.nome}</h3>
-                <p class="indirizzo">${locale.indirizzo}</p>
-                <p class="offerta">${locale.offerta}</p>
+                <h3>${convenzione.nome}</h3>
+                <p class="indirizzo">${convenzione.indirizzo}</p>
+                <p class="offerta">${convenzione.offerta}</p>
                  
-                <div class="card-azioni">
-                    <a href="${linkNavigatore}" target="_blank" class="bottone btn-nav">
+                <div class="card-actions">
+                    <a href="${navUrl}" target="_blank" class="nav-btn">
                         Avvia Navigatore
                     </a>
-                    <button class="bottone btn-mappa" 
-                            data-id="${locale.id}" 
-                            data-nome="${locale.nome}" 
-                            data-lat="${locale.lat}" 
-                            data-lng="${locale.lng}">
+                    <button class="map-btn" 
+                            data-id="${convenzione.id}" 
+                            data-nome="${convenzione.nome}" 
+                            data-lat="${convenzione.lat}" 
+                            data-lng="${convenzione.lng}">
                         Mostra Mappa
                     </button>
-                    <button class="bottone btn-recensioni" 
-                            data-id="${locale.id}" 
-                            data-nome="${locale.nome}">
+                    <button class="review-btn" 
+                            data-id="${convenzione.id}" 
+                            data-nome="${convenzione.nome}">
                         Recensioni
                     </button>
                 </div>
             </div>
         `;
     }
-
-    // Qui costruisco la pagina con le sue 4 sezioni, organizzando in sezioni per le sedi.
-    function mostraTutto() {
-        griglia.innerHTML = ''; // Pulisco tutto
-
-        // Definisco le sedi manualmente
-        const elencoSedi = [
-            { id: 'mediterraneo', titolo: 'Palazzo del Mediterraneo' },
-            { id: 'giusso', titolo: 'Palazzo Giusso' },
-            { id: 'porta-coeli', titolo: 'Palazzo Santa Maria Porta Coeli' },
-            { id: 'corigliano', titolo: 'Palazzo Corigliano' }
-        ];
-
-        // mentre qua tramite if giro su ogni sezione per creare il titolo e le card
-        elencoSedi.forEach(function(sedeObj) {
-
-            // Filtro le convenzioni per questa sede specifica
-            const localiDellaSede = listaLocali.filter(function(l) {
-                return l.sede === sedeObj.id;
-            });
-            // controllo se ci sono locali per questa sede, se è vuota non creo nulla
-            if (localiDellaSede.length > 0) {
-                // Creo il titolo della sezione
-                let htmlSezione = `
-                    <section class="sezione-sede">
-                        <h2 id="${sedeObj.id}" class="titolo-sede">${sedeObj.titolo}</h2>
-                        <div class="griglia-card">
-                `;
-
-                // Aggiungo tutte le card di questa sede concatenando HTML generato da creadCard
-                localiDellaSede.forEach(function(locale) {
-                    htmlSezione += creaCard(locale);
-                });
-
-                htmlSezione += `</div></section>`;
-
-                griglia.innerHTML += htmlSezione; // per poi aggiungerlo alla pagina
-            }
-        });
-    }
-
-    // cercaLocali serve per la ricerca in base a ciò che scrivo dentro la barra di ricerca.
-    function cercaLocali(testo) {
-        // qui uso filter per cercare se il testo scritto è contenuto nel nome, indirizzo o tipo del locale
-        const trovati = listaLocali.filter(function(l) {
-            return l.nome.toLowerCase().includes(testo) ||
-                l.indirizzo.toLowerCase().includes(testo) ||
-                l.tipo.toLowerCase().includes(testo);
-        });
-
-        griglia.innerHTML = ''; // pulisco la griglia prima di far vedere i risultati
-        // se la lista dei trovati è vuota, mostro un messaggio di avviso
-        if (trovati.length === 0) {
-            griglia.innerHTML = '<p class="no-results">Nessuna convenzione trovata.</p>';
-            return;
-        }
-
-        let htmlGriglia = '<div class="griglia-card">';
-
-        // e dopo mostro solo i risultati trovati
-        trovati.forEach(function(locale) {
-            htmlGriglia += creaCard(locale);
-        });
-
-        htmlGriglia += '</div>';
-        griglia.innerHTML = htmlGriglia; // qui inserisco il risultato finale nella pagina
-    }
-
-    //  FUNZIONI PER LE RECENSIONI
-
-    // coloraStelle mi serve per colorare le stelle quando ci passo con mouse sopra oppure ci clicco.
-    function coloraStelle(voto) {
-        const stelle = bloccoStelle.querySelectorAll('span'); // prendo tutte le stelle
-        // giro su ogni stella per decidere se accenderla o spegnerla
-        stelle.forEach(function(stella) {
-            // se il numero della stella è minore o uguale al voto, le do la classe selezionata
-            if (parseInt(stella.dataset.voto) <= voto) {
-                stella.classList.add('selezionata');
-            } else {
-                stella.classList.remove('selezionata'); // altrimenti la faccio tornare bianca
-            }
-        });
-    }
-
-    // qui resetto le stelle a zero quando chiudo il pop-up
-    function resettaStelle() {
-        votoAttuale = 0;
-        coloraStelle(0);
-    }
-
-    // apriRecensioni mi serve per aprire il pop-up delle recensioni
-    function apriRecensioni(id, nome) {
-        titoloRecensioni.textContent = `Recensioni per ${nome}`;
-        finestraRecensioni.dataset.idLocale = id;  // salvo l'ID del locale nel modal per sapere a chi devo salvare la recensione dopo
-        caricaCommenti(id); // caricaCommenti mi carica i vecchi commenti
-        finestraRecensioni.classList.remove('hidden'); // tolgo la classe 'hidden' per rendere visibile il modale
-        resettaStelle();
-        testoRecensione.value = ''; // qui invece pulisco l'area di testo per scrivere una nuova recensione
-    }
-
-    function chiudiRecensioni() {
-        finestraRecensioni.classList.add('hidden');  // chiudo la classe (aggiungo hidden)
-    }
-
-    // a questo punto carico le recensioni dalla memoria del browser 'localStorage'
-    function caricaCommenti(id) {
-        listaCommenti.innerHTML = '';
-        // successivamente prendo la parte della memoria salvata sul browser e la trasformo in oggetti JavaScript ovvero JSON.parse
-        const tutteRecensioni = JSON.parse(localStorage.getItem('recensioni_studenti')) || {};
-        const commentiLocale = tutteRecensioni[id] || [];
-        // se non ci sono commenti per questo locale, mostro un messaggio
-        if (commentiLocale.length === 0) {
-            listaCommenti.innerHTML = '<p class="no-reviews">Nessuna recensione ancora.</p>';
-            return;
-        }
-
-        // forEach recensione vado a creare il blocco HTML con le stelle e il testo
-        commentiLocale.forEach(function(recensione) {
-            const elementoRecensione = document.createElement('div'); // creo un nuovo DIV che mi serve per come contenitore generico a livello di blocco per raggrupare altri elementi HTML
-            elementoRecensione.classList.add('singolo-commento'); // gli assegno la classe CSS(cascading style sheets) mi serve per definire l'aspetto e la formattazione di un sito, separando uk contenuto HTML
-
-            // genero le 5 stelle
-            let stelleHTML = '<div class="star-rating-display">';
-            // con il ciclo iterativo FOR cuiclo da 1 a 5 per creare le stelle gialle o bianche in base al voto
-            for (let i = 1; i <= 5; i++) {
-                if (i <= recensione.voto) {
-                    stelleHTML += '<span class="stelle-gialle">★</span>';
-                } else {
-                    stelleHTML += '<span style="color:#ccc">★</span>';
-                }
-            }
-            stelleHTML += '</div>';
-            // inserisco HTML delle stelle e il testo del commento dentro il div
-            elementoRecensione.innerHTML = stelleHTML + '<p>' + recensione.testo + '</p>';
-            listaCommenti.appendChild(elementoRecensione); // e poi aggiungo il commento comopleto alla lista
-        });
-    }
-
-    // Salvo una nuova recensione nel localStorage
-    function salvaCommento(id, voto, testo) {
-        // leggo tutto ciò che già c'era di salvato
-        const tutteRecensioni = JSON.parse(localStorage.getItem('recensioni_studenti')) || {};
-
-        // se è la prima recensione allora creo una nuova lista vuota
-        if (!tutteRecensioni[id]) {
-            tutteRecensioni[id] = [];
-        }
-        // creo una nuova variabile recensioni (oggetto)
-        const nuovaRecensione = {
-            voto: voto,
-            testo: testo
-        };
-        // e lo aggiungo alla lista
-        tutteRecensioni[id].push(nuovaRecensione);
-        // salvo di nuovo tutto nel browser trasformando in testo JSON.stringify.
-        localStorage.setItem('recensioni_studenti', JSON.stringify(tutteRecensioni));
-    }
-
-    // funzioni per la mappa leaflet
-
-    function apriMappa(nome, lat, lng) {
-        titoloMappa.textContent = `Mappa per ${nome}`;
-        finestraMappa.classList.remove('hidden'); // per prima cosa rendo visibile il contenitore della mappa
-        // siccome leaflet a volte si confonde e non disegna bene gli do un piccolo ritardo per aprire il pop-up e disegnare la mappa
-        setTimeout(function() {
-            if (mappaLeaflet) {
-                mappaLeaflet.remove(); // poi se c'era già una mappa la cancello
-            }
-
-            // creo la mappa Leaflet e assegno il valore di 17 che è lo zoom
-            /* global L */
-            mappaLeaflet = L.map('box-mappa').setView([lat, lng], 17);
-
-            // aggiungo lo sfondo della mappa 'openstreetmap'
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(mappaLeaflet);
-
-            // aggiungo il market ovvero il puntino rosso
-            const marker = L.marker([lat, lng]).addTo(mappaLeaflet);
-            marker.bindPopup(`<b>${nome}</b>`).openPopup();
-        }, 100);
-    }
-
-    function chiudiMappa() {
-        finestraMappa.classList.add('hidden');
-        if (mappaLeaflet) {
-            mappaLeaflet.remove(); // ad ogni chiusura della mappa la distruggo per risparmiare memoria
-            mappaLeaflet = null;
-        }
-    }
-
-    // parte della gestione degli eventi
-
-    // qui nella tendina quando premo e cambio sede, mi scorre la pagina fino alla sede scelta
-    filtroSede.addEventListener('change', function(e) {
-        const idSelezionato = e.target.value;
-        if(idSelezionato === 'page-top') {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // effetto per tornare in cima
-        } else {
-            const elementoDaRaggiungere = document.getElementById(idSelezionato);
-            if (elementoDaRaggiungere) {
-                elementoDaRaggiungere.scrollIntoView({ behavior: 'smooth', block: 'start' }); // qui scorro fino all'elemento specigico
-            }
-        }
-    });
-
-    // qui ci troviamo nella barra di ricerca, quando scrivo qualcosa mi filtra le card in tempo reale
-    barraRicerca.addEventListener('keyup', function(e) {
-        const testoCercato = e.target.value.toLowerCase();
-        if (testoCercato.length > 0) {
-            cercaLocali(testoCercato);
-        } else {
-            mostraTutto(); // se dopo if cancello tutto nella barra di ricerca mi deve rimostrare tutta la lista
-        }
-    });
-
-    // qua controllo i click sui vari bottoni (tramite delegazione eventi sulla griglia)
-    griglia.addEventListener('click', function(e) {
-        // questo pezzo mi serve per vedere se ho cliccato su recensioni
-        if (e.target.classList.contains('btn-recensioni')) {
-            const id = e.target.dataset.id;
-            const nome = e.target.dataset.nome;
-            apriRecensioni(id, nome);
-        }
-        // quest'altro se ho cliccato su mappa
-        if (e.target.classList.contains('btn-mappa')) {
-            const nome = e.target.dataset.nome;
-            const lat = e.target.dataset.lat;
-            const lng = e.target.dataset.lng;
-            apriMappa(nome, lat, lng);
-        }
-    });
-
-    // qua vado a gestire la chiusura dei Modal o tramite la X o sullo sfondo
-    tastoChiudiRecensioni.addEventListener('click', chiudiRecensioni);
-    finestraRecensioni.addEventListener('click', function(e) {
-        // qui se clicco sullo sfondo scuro e non dentro la finestra bianca chiudo tutto
-        if (e.target === finestraRecensioni) {
-            chiudiRecensioni();
-        }
-    });
-
-    // l'invio del form quando premo su invia recensione
-    moduloRecensione.addEventListener('submit', function(e) {
-        e.preventDefault(); // qua blocco il refresh della pagina
-        const testoNuovo = testoRecensione.value.trim(); // tolgo gli spazzi vuoti sia al unizio che alla fien
-        const idLocale = finestraRecensioni.dataset.idLocale;
-        // se ho scritto quclosa e ho dato un voto allora lo salvo
-        if (testoNuovo && votoAttuale > 0) {
-            salvaCommento(idLocale, votoAttuale, testoNuovo);
-            caricaCommenti(idLocale); // caricaCommenti mi serve per mostrare il nuovo commento
-            resettaStelle();
-            testoRecensione.value = '';
-        } else if (votoAttuale === 0) {
-            alert("Per favore, seleziona un voto da 1 a 5 stelle.");
-        }
-    });
-
-    //  chiusura del Modal Mappa
-    tastoChiudiMappa.addEventListener('click', chiudiMappa);
-    finestraMappa.addEventListener('click', function(e) {
-        if (e.target === finestraMappa) {
-            chiudiMappa();
-        }
-    });
-
-    // sezione per gestire la parte interattiva delle stelle
-
-    // Aggiunge gli eventi a ogni stella
-    const stelleInput = bloccoStelle.querySelectorAll('span');
-    stelleInput.forEach(function(stella) {
-
-        // coloraStelle serve per illuminare le stelle quando ci passo con il mouse sopra
-        stella.addEventListener('mouseover', function() {
-            coloraStelle(parseInt(stella.dataset.voto));
-        });
-
-        // qua quando clicco sulla stella deve fissare il voto
-        stella.addEventListener('click', function() {
-            votoAttuale = parseInt(stella.dataset.voto);
-            coloraStelle(votoAttuale);
-        });
-    });
-
-    // con mouseout mi mostra il voto assegnato o le stelle vuote non colorate
-    bloccoStelle.addEventListener('mouseout', function() {
-        coloraStelle(votoAttuale);
-    });
-
-    //  mi dice che è tutto pronto e quindi può disegnare la pagina
-    mostraTutto();
-});
