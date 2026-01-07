@@ -79,7 +79,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     display: grid;     /* contenitore griglia : elementi disponsti in riga e in colonna*/
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /*specifica il numero e la larghezza delle colonne in un layout a griglia. */
                                                                   /* repeat-> ripete le colonne; auto-fit -> adatta il numero di colonne alla larghezza disponibile; */
-                                                                  /* minmax -> ogni colonna deve essere larga ALMENO 250px, ma se c'è spazio, si espande per riempire la frazione disponibile (1fr).*/
+                                                                   /* minmax -> ogni colonna deve essere larga ALMENO 250px, ma se c'è spazio, si espande per riempire la frazione disponibile (1fr).*/
     gap: 2rem;  /* Proprietà abbreviata per row-gap e column-gap (spazio tra righe e spazio tra colonne) */
     margin-bottom: 2rem; /*margine inferiore*/
 }
