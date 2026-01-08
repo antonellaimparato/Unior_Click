@@ -187,8 +187,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     font-weight: 500; /*spessore*/
     color: #000000;
     margin-bottom: 1rem; /*margine inferiore*/
-    flex-grow: 1;
-    /*specifica di quanto crescerà l'elemento rispetto al resto degli elementi flessibili all'interno dello stesso contenitore,
-                      cioè visto che le descrizioni delle offerte nelle card non sono della stessa lunghezza, scrivendo ciò accade che le descrizioni si "gonfiano"
-                      così da avere i bottoni sottostanti allineati*/
+    flex-grow: 1; /*specifica di quanto crescerà l'elemento rispetto al resto degli elementi flessibili all'interno dello stesso contenitore,
+                   cioè visto che le descrizioni delle offerte nelle card non sono della stessa lunghezza, scrivendo ciò accade che le descrizioni si "gonfiano"
+                   così da avere i bottoni sottostanti allineati*/
 }
