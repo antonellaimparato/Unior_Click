@@ -8,9 +8,8 @@
      tag imposto il viewport della pagina, così che il layout della pagina si adatti alle
      dimensioni dello schermo così che sia leggibile su tutte le tipologie di dispositivo -->
     <link rel="stylesheet" href="css/style.css"> <!-- collego il file style.css, presente nella cartella CSS, al file index.html-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-          crossorigin=""/> <!-- inserisco il file CSS di Leaflet -->
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" rel="stylesheet"/> <!-- inserisco il file CSS di Leaflet -->
 
 </head>
 <body>
@@ -18,7 +17,7 @@
 <header id="page-top"> <!-- intestazione della pagina, rivedere perchè in css e java non indicaqto con id -->
     <!-- id identifica un unico elemento, questo elemento e viene utilizzato per far riferimento ad una specifica dichiarazione di stile in css e per manipolare in jqava queòllo specifico elemento -->
     <a href="https://www.unior.it/it" target="_blank"> <!-- INSERISCO UN IMMAAGINE COME LINK -->
-        <img src="images/logo.jpeg" alt="Logo UNIORICLICK" height="120" width="120" id="logo"> <!-- introduco immagine, DA CAPIRE MEGLIO SE POSSIAMO MANTENERE QUIESGTO ID LOGO O E' TROPPO SOSPETTO-->
+        <img src="images/logo.jpeg" alt="Logo UNIORICLICK" height="1280" width="1280" id="logo"> <!-- introduco immagine, DA CAPIRE MEGLIO SE POSSIAMO MANTENERE QUIESGTO ID LOGO O E' TROPPO SOSPETTO-->
     </a>
     <h1>Convenzioni Studenti</h1> <!-- elemento che introduce titolo -->
 </header> <!--chiusura header -->
@@ -53,7 +52,7 @@
 <button id="open-review-modal">Apri Recensioni</button> <!-- Apro un pop up, ovvero una finestra modale -->
 <div id="review-modal" class="modal-backdrop hidden"> <!-- Il modale-->
     <div class="modal-content"> <!-- Modal content -->
-        <span id="modal-close-btn" class="modal-close" >&times;</span> <!-- chiusura del modale -->
+        <span class="close" >&times;</span> <!-- chiusura del modale -->
         <h2 id="modal-title">Recensioni per...</h2> <!-- header -->
         <div id="reviews-list-container"></div> <!-- lista recensioni -->
         <form id="review-form" action=# method="post"> <!-- apro form  per inviare una nuova recensione -->
