@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Qui abbiamo i riferimenti all'interfaccia utente che riguardano le recensioni
     const reviewModal = document.getElementById('review-modal'); // Il modale delle recensioni
-    const modalCloseBtn = document.getElementById('modal-close-btn');
     const modalTitle = document.getElementById('modal-title');
+    const modalCloseBtn = document.getElementsByClassName('close')[0]
     const reviewsListContainer = document.getElementById('reviews-list-container');  // qui tramite document.getElementById andiamo a cercare dentro HTML un elemento che ha ID 'reviews-list-container' e serve per mostrarci successivamente i commenti che vengono scritti.
     const reviewForm = document.getElementById('review-form');  // questo è il modulo che ci serve per scrivere il commento
     const reviewText = document.getElementById('review-text');  // qua abbiamo l'area del testo
@@ -81,3 +81,297 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
     }
+
+    // Qui costruisco la pagina con le sue 4 sezioni, organizzando in sezioni per le sedi.
+    function populateGroupedConvenzioni() {
+        cardContainer.innerHTML = ''; // Pulisco tutto
+
+        // Definisco le sedi manualmente
+        const sedi = [
+            { id: 'mediterraneo', titolo: 'Palazzo del Mediterraneo' },
+            { id: 'giusso', titolo: 'Palazzo Giusso' },
+            { id: 'porta-coeli', titolo: 'Palazzo Santa Maria Porta Coeli' },
+            { id: 'corigliano', titolo: 'Palazzo Corigliano' }
+        ];
+
+        // mentre qua tramite if giro su ogni sezione per creare il titolo e le card
+        sedi.forEach(function(sedeObj) {
+
+            // Filtro le convenzioni per questa sede specifica
+            const convenzioniSede = convenzioni.filter(function(c) {
+                return c.sede === sedeObj.id;
+            });
+
+            // controllo se ci sono locali per questa sede, se è vuota non creo nulla
+            if (convenzioniSede.length > 0) {
+                // Creo il titolo della sezione
+                let sezioneHTML = `
+                    <section class="sede-section">
+                        <h2 id="${sedeObj.id}" class="sede-heading">${sedeObj.titolo}</h2>
+                        <div class="card-grid">
+                `;
+
+                // Aggiungo tutte le card di questa sede concatenando HTML generato da createCardHTML
+                convenzioniSede.forEach(function(conv) {
+                    sezioneHTML += createCardHTML(conv);
+                });
+
+                sezioneHTML += `</div></section>`;
+
+                cardContainer.innerHTML += sezioneHTML; // per poi aggiungerlo alla pagina
+            }
+        });
+    }
+
+    // displayFilteredConvenzioni serve per la ricerca in base a ciò che scrivo dentro la barra di ricerca.
+    function displayFilteredConvenzioni(searchTerm) {
+        // qui uso filter per cercare se il testo scritto è contenuto nel nome, indirizzo o tipo del locale
+        const filtered = convenzioni.filter(function(c) {
+            return c.nome.toLowerCase().includes(searchTerm) ||
+                c.indirizzo.toLowerCase().includes(searchTerm) ||
+                c.tipo.toLowerCase().includes(searchTerm);
+        });
+
+        cardContainer.innerHTML = ''; // pulisco la griglia prima di far vedere i risultati
+
+        // se la lista dei trovati è vuota, mostro un messaggio di avviso
+        if (filtered.length === 0) {
+            cardContainer.innerHTML = '<p class="no-results">Nessuna convenzione trovata.</p>';
+            return;
+        }
+
+        let gridHTML = '<div class="card-grid">';
+
+        // e dopo mostro solo i risultati trovati
+        filtered.forEach(function(conv) {
+            gridHTML += createCardHTML(conv);
+        });
+
+        gridHTML += '</div>';
+        cardContainer.innerHTML = gridHTML; // qui inserisco il risultato finale nella pagina
+    }
+
+    //  FUNZIONI PER LE RECENSIONI
+
+    // setStarsVisual serve per colorare le stelle quando ci passo con mouse sopra oppure ci clicco.
+    function setStarsVisual(rating) {
+        const stelle = starRatingInput.querySelectorAll('span'); // prendo tutte le stelle
+        // giro su ogni stella per decidere se accenderla o spegnerla
+        stelle.forEach(function(star) {
+            // se il numero della stella è minore o uguale al voto, le do la classe selezionata
+            if (parseInt(star.dataset.value) <= rating) {
+                star.classList.add('selected');
+            } else {
+                star.classList.remove('selected'); // altrimenti la faccio tornare bianca
+            }
+        });
+    }
+
+    // qui resetto le stelle a zero quando chiudo il pop-up
+    function resetStarRatingInput() {
+        currentStarRating = 0;
+        setStarsVisual(0);
+    }
+
+    // openReviewModal mi serve per aprire il pop-up delle recensioni
+    function openReviewModal(conventionId, conventionName) {
+        modalTitle.textContent = `Recensioni per ${conventionName}`;
+        reviewModal.dataset.currentId = conventionId;  // salvo l'ID del locale nel modal per sapere a chi devo salvare la recensione dopo
+        loadReviews(conventionId); // loadReviews mi carica i vecchi commenti
+        reviewModal.classList.remove('hidden'); // tolgo la classe 'hidden' per rendere visibile il modale
+        resetStarRatingInput();
+        reviewText.value = ''; // qui invece pulisco l'area di testo per scrivere una nuova recensione
+    }
+
+    function closeReviewModal() {
+        reviewModal.classList.add('hidden');  // chiudo la classe (aggiungo hidden)
+    }
+
+    // a questo punto carico le recensioni dalla memoria del browser 'localStorage'
+    function loadReviews(conventionId) {
+        reviewsListContainer.innerHTML = '';
+        // successivamente prendo la parte della memoria salvata sul browser e la trasformo in oggetti JavaScript ovvero JSON.parse
+        const allReviews = JSON.parse(localStorage.getItem('unioriclick_reviews')) || {};
+        const conventionReviews = allReviews[conventionId] || [];
+
+        // se non ci sono commenti per questo locale, mostro un messaggio
+        if (conventionReviews.length === 0) {
+            reviewsListContainer.innerHTML = '<p class="no-reviews">Nessuna recensione ancora.</p>';
+            return;
+        }
+
+        // forEach recensione vado a creare il blocco HTML con le stelle e il testo
+        conventionReviews.forEach(function(review) {
+            const reviewElement = document.createElement('div'); // creo un nuovo DIV che mi serve per come contenitore generico a livello di blocco
+            reviewElement.classList.add('review-item'); // gli assegno la classe CSS
+
+            // genero le 5 stelle
+            let starsHTML = '<div class="star-rating-display">';
+            // con il ciclo iterativo FOR ciclo da 1 a 5 per creare le stelle gialle o bianche in base al voto
+            for (let i = 1; i <= 5; i++) {
+                if (i <= review.stars) {
+                    starsHTML += '<span class="star-filled">★</span>';
+                } else {
+                    starsHTML += '<span class="star-empty">★</span>';
+                }
+            }
+            starsHTML += '</div>';
+
+            // inserisco HTML delle stelle e il testo del commento dentro il div
+            reviewElement.innerHTML = starsHTML + '<p>' + review.text + '</p>';
+            reviewsListContainer.appendChild(reviewElement); // e poi aggiungo il commento completo alla lista
+        });
+    }
+
+    // Salvo una nuova recensione nel localStorage
+    function saveReview(conventionId, stars, text) {
+        // leggo tutto ciò che già c'era di salvato
+        const allReviews = JSON.parse(localStorage.getItem('unioriclick_reviews')) || {};
+
+        // se è la prima recensione allora creo una nuova lista vuota
+        if (!allReviews[conventionId]) {
+            allReviews[conventionId] = [];
+        }
+        // creo una nuova variabile recensioni (oggetto)
+        const newReview = {
+            stars: stars,
+            text: text
+        };
+        // e lo aggiungo alla lista
+        allReviews[conventionId].push(newReview);
+        // salvo di nuovo tutto nel browser trasformando in testo JSON.stringify.
+        localStorage.setItem('unioriclick_reviews', JSON.stringify(allReviews));
+    }
+
+    // funzioni per la mappa leaflet
+
+    function openMapModal(nome, lat, lng) {
+        mapModalTitle.textContent = `Mappa per ${nome}`;
+        mapModal.classList.remove('hidden'); // per prima cosa rendo visibile il contenitore della mappa
+        // siccome leaflet a volte si confonde e non disegna bene gli do un piccolo ritardo per aprire il pop-up e disegnare la mappa
+        setTimeout(function() {
+            if (map) {
+                map.remove(); // poi se c'era già una mappa la cancello
+            }
+
+            // creo la mappa Leaflet e assegno il valore di 17 che è lo zoom
+            /* global L */
+            map = L.map('mapid').setView([lat, lng], 17);
+
+            // aggiungo lo sfondo della mappa 'openstreetmap'
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // aggiungo il marker ovvero il puntino rosso
+            const marker = L.marker([lat, lng]).addTo(map);
+            marker.bindPopup(`<b>${nome}</b>`).openPopup();
+        }, 100);
+    }
+
+    function closeMapModal() {
+        mapModal.classList.add('hidden');
+        if (map) {
+            map.remove(); // ad ogni chiusura della mappa la distruggo per risparmiare memoria
+            map = null;
+        }
+    }
+
+    // parte della gestione degli eventi
+
+    // qui nella tendina quando premo e cambio sede, mi scorre la pagina fino alla sede scelta
+    sedeFilter.addEventListener('change', function(e) {
+        const selectedID = e.target.value;
+        const elementToScrollTo = document.getElementById(selectedID);
+        if (elementToScrollTo) {
+            elementToScrollTo.scrollIntoView({ behavior: 'smooth', block: 'start' }); // qui scorro fino all'elemento specifico
+        }
+    });
+
+    // qui ci troviamo nella barra di ricerca, quando scrivo qualcosa mi filtra le card in tempo reale
+    searchBar.addEventListener('keyup', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        if (searchTerm.length > 0) {
+            displayFilteredConvenzioni(searchTerm);
+        } else {
+            populateGroupedConvenzioni(); // se dopo if cancello tutto nella barra di ricerca mi deve rimostrare tutta la lista
+        }
+    });
+
+    // qua controllo i click sui vari bottoni (tramite delegazione eventi sulla griglia)
+    cardContainer.addEventListener('click', function(e) {
+        // questo pezzo mi serve per vedere se ho cliccato su recensioni
+        if (e.target.classList.contains('review-btn')) {
+            const id = e.target.dataset.id;
+            const nome = e.target.dataset.nome;
+            openReviewModal(id, nome);
+        }
+        // quest'altro se ho cliccato su mappa
+        if (e.target.classList.contains('map-btn')) {
+            const nome = e.target.dataset.nome;
+            const lat = e.target.dataset.lat;
+            const lng = e.target.dataset.lng;
+            openMapModal(nome, lat, lng);
+        }
+    });
+
+    // qua vado a gestire la chiusura dei Modal o tramite la X o sullo sfondo
+    modalCloseBtn.addEventListener('click', closeReviewModal);
+    reviewModal.addEventListener('click', function(e) {
+        // qui se clicco sullo sfondo scuro e non dentro la finestra bianca chiudo tutto
+        if (e.target === reviewModal) {
+            closeReviewModal();
+        }
+    });
+
+    // l'invio del form quando premo su invia recensione
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // qua blocco il refresh della pagina
+        const newReviewText = reviewText.value.trim(); // tolgo gli spazi vuoti sia all'inizio che alla fine
+        const conventionId = reviewModal.dataset.currentId;
+
+        // se ho scritto qualcosa e ho dato un voto allora lo salvo
+        if (newReviewText && currentStarRating > 0) {
+            saveReview(conventionId, currentStarRating, newReviewText);
+            loadReviews(conventionId); // loadReviews mi serve per mostrare il nuovo commento
+            resetStarRatingInput();
+            reviewText.value = '';
+        } else if (currentStarRating === 0) {
+            alert("Per favore, seleziona un voto da 1 a 5 stelle.");
+        }
+    });
+
+    //  chiusura del Modal Mappa
+    mapCloseBtn.addEventListener('click', closeMapModal);
+    mapModal.addEventListener('click', function(e) {
+        if (e.target === mapModal) {
+            closeMapModal();
+        }
+    });
+
+    // sezione per gestire la parte interattiva delle stelle
+
+    // Aggiunge gli eventi a ogni stella
+    const stelleInput = starRatingInput.querySelectorAll('span');
+    stelleInput.forEach(function(star) {
+
+        // setStarsVisual serve per illuminare le stelle quando ci passo con il mouse sopra
+        star.addEventListener('mouseover', function() {
+            setStarsVisual(parseInt(star.dataset.value));
+        });
+
+        // qua quando clicco sulla stella deve fissare il voto
+        star.addEventListener('click', function() {
+            currentStarRating = parseInt(star.dataset.value);
+            setStarsVisual(currentStarRating);
+        });
+    });
+
+    // con mouseout mi mostra il voto assegnato o le stelle vuote non colorate
+    starRatingInput.addEventListener('mouseout', function() {
+        setStarsVisual(currentStarRating);
+    });
+
+    //  mi dice che è tutto pronto e quindi può disegnare la pagina
+    populateGroupedConvenzioni();
+});
