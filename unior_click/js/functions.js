@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const convenzioni = [
         // Sede: giusso
         { id: 1, nome: "Pappa e Pizza🍕", indirizzo: "Via Enrico De Marinis 6, 80134 Napoli", offerta: "Coupon cumulabili per ricevere pizze o menù in omaggio. (Esibire la nostra card per avere quella coupon)", tipo: "cibo pizza", sede: "giusso", lat: 40.8461, lng: 14.2566 },
-        { id: 2, nome: "Bar Orientale", indirizzo: "Largo Giusso Girolamo 2, 80134 Napoli", offerta: "Colazione: caffè + cornetto, cappuccino + cornetto. Pranzo: consumazione + bibita. 10% di sconto sui tavoli (sempre).", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84573, lng: 14.25527 },
+        { id: 2, nome: "Bar Orientale☕️", indirizzo: "Largo Giusso Girolamo 2, 80134 Napoli", offerta: "Colazione: caffè + cornetto, cappuccino + cornetto. Pranzo: consumazione + bibita. 10% di sconto sui tavoli (sempre).", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84573, lng: 14.25527 },
         { id: 6, nome: "120 Grammi🍝", indirizzo: "Via Mezzocannone 24, 80134 Napoli", offerta: "Pranzo: Acqua in omaggio accanto ad ogni vaschetta", tipo: "cibo pranzo pasta", sede: "giusso", lat: 40.8461, lng: 14.2566 },
-        { id: 8, nome: "O Grin", indirizzo: "Via Mezzocannone 83, 80134 Napoli", offerta: "Pranzo (asporto e al tavolo): Pasta del giorno, Panino con burger, Menù (insalata/panini + dolce + bibita), Menù (primo + dolce + bibita)", tipo: "cibo pranzo vegan", sede: "giusso", lat: 40.8465, lng: 14.2570 },
+        { id: 8, nome: "O Grin🍽️", indirizzo: "Via Mezzocannone 83, 80134 Napoli", offerta: "Pranzo (asporto e al tavolo): Pasta del giorno, Panino con burger, Menù (insalata/panini + dolce + bibita), Menù (primo + dolce + bibita)", tipo: "cibo pranzo vegan", sede: "giusso", lat: 40.8465, lng: 14.2570 },
         { id: 10, nome: "Bar Santa Chiara☕️", indirizzo: "Largo Banchi Nuovi 2, 80134 Napoli", offerta: "Colazione: caffè espresso + consumazione. Pranzo: bibita + pizzetta", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84531, lng: 14.25497 },
 
         // Sede: corigliano
