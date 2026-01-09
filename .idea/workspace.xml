@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767980661353</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
+      <option name="closed" value="true" />
+      <created>1767983018769</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1767983018769</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
