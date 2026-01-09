@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="ho aggiunto il body dell'html">
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="ho aggiunto l'intestazione dell'html">
+      <change beforePath="$PROJECT_DIR$/unior_click/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,6 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
-      <workItem from="1767974210267" duration="78000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -163,23 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767700018456</updated>
     </task>
-    <task id="LOCAL-00011" summary="ho aggiunto il body dell'html">
-      <option name="closed" value="true" />
-      <created>1767862517663</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1767862517663</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ho aggiunto il body dell'html">
-      <option name="closed" value="true" />
-      <created>1767974271824</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1767974271824</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +182,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
-    <MESSAGE value="ho aggiunto il body dell'html" />
-    <option name="LAST_COMMIT_MESSAGE" value="ho aggiunto il body dell'html" />
+    <option name="LAST_COMMIT_MESSAGE" value="ho aggiunto l'intestazione dell'html" />
   </component>
 </project>
