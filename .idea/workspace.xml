@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
       <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +178,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767911658757</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
+      <option name="closed" value="true" />
+      <created>1767980627738</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1767980627738</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
+      <option name="closed" value="true" />
+      <created>1767980661353</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1767980661353</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +215,7 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
+    <MESSAGE value="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
   </component>
 </project>
