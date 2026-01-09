@@ -9,12 +9,11 @@ html {
 body {
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Arial, Verdana, sans-serif;  /*font-family specifica il font, e inserisco vari font in questo modo siamo sicuri che almeno uno il browser lo legge */
 
-    /* Sfondo animato */
+    /*sfondo animato */
     background: linear-gradient(-45deg, #800000,#ff0000, #cc001f,#a60036); /*diagonale*/ /*sfumature di rosso*/
     background-size: 500% 500%;  /*piu è grande l'immagine di sfondo piu si nota l'animazione/ le varie sfumature*/
-    animation: gradientbackground 5s ease infinite;
+    animation: gradientbackground 5s ease infinite; /*nome-durata-ripetizione*/
     min-height: 100px;  /*definisce l'altezza minima di un elemento*/
-
     color: #000000;
     line-height: 1.6;  /*spazio verticale tra le righe*/
 }
@@ -31,13 +30,13 @@ header { /*selettore di elemento che individua e applica uno stile all'elemento 
     background-position: center;
     text-align:left;
 
-    /*  Aumentato il padding-top per "abbassare" il contenuto */
+    /*aumentato il padding-top per "abbassare" il contenuto */
     padding: 12rem 1.5rem 2rem; /*/(primo numero si riferisce allo spazio sopra, il secondo ai lati dx e sn, e l'ultimo al padding inferiore*/
 
     position: relative
 }
 
-/* Overlay scuro per la leggibilità */
+/*overlay scuro per la leggibilità */
 header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima di header; Questo elemento funge da strato colorato sopra l'immagine di sfondo.*/
     content: "";  /*specificare SEMPRE il contenuto da inserire; in questo caso stringa vuota*/
     position: absolute;   /*è posizionato rispetto all'antenato posizionato più vicino (con posizione diversa da statica), quindi questo overlay si posizionerà rispetto all'header*/
@@ -69,7 +68,7 @@ header h1 {
     z-index: 2;
 }
 
-/* Filtri e parte centrale  */
+/*filtri e parte centrale  */
 main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine */
     max-width: 1200px; /*definisce la larghezza massima di un elemento*/
     margin: 2rem auto; /* 2rem-> superiore e inferiore; auto-> destra e sinistra, centra automaticamente l'elemento */
@@ -95,7 +94,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /*aggiunge ombra al testo. Ombra orizzontale e verticale, con effetto colore e sfocatura (in rgba lo 0.2 rende piu trasparente/sottile il nero)*/
 }
 
-/*Si riferisce ai "rettangoli" sotto cerca e mostra vicino a*/
+/*si riferisce ai "rettangoli" sotto cerca e mostra vicino a*/
 #search-bar, /*selettore ID*/
 #sede-filter {
     width: 100%; /*larghezza*/
@@ -120,4 +119,103 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                   modifica il colore e l'opacità del testo*/
     color: #000000;
     opacity: 0.4;
+}
+
+/*contenuto del card e il suo stile */
+.sede-heading {   /*selettore di classe -> sono le scritte delle varie sedi sopra le convenzioni*/
+    font-size: 1.8rem;
+    font-weight: 700; /*grassetto*/
+    color: #ffffff;   /*codice esadecimale*/
+    text-shadow: 2px 2px 4px rgb(0,0,0);  /*aggiunge ombra al testo (orizzonatale, verticale, sfocatura, colore */
+    border-bottom: 1px solid rgb(255, 255, 255); /*aggiunge bordo/linea inferiore al testo (1px è lo spessore)*/
+    padding-bottom: 0.5rem; /*spazio tra linea e testo*/
+    margin-top: 2.0rem; /*margine superiore*/
+    margin-bottom: 1rem; /*margine inferiore*/
+}
+#card-container { /*selettore ID, cioè seleziona l'UNICO elemento id=card-container*/
+    display: block; /*"display" : proprietà che ci dice come visualizzare gli elementi HTML.
+                     "block" : questo elemento viene trattato come un blocco (Un elemento a livello di blocco inizia SEMPRE su una nuova riga e occupa l'intera larghezza disponibile) */
+}
+.card-grid { /*selettore di classe (identifica un gruppo di elementi che devono avere lo stesso stile)*/
+    display: grid;  /* in questo modo si crea un contenitore griglia a livello di blocco*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr )); /*specifica il numero (e la larghezza) delle colonne in un layout a griglia,
+                          "repeat" : ripete un insieme di colonne nella griglia
+                          "auto-fit" : il numero di colonne si adatta automaticamente, riempiendo lo spazio disponibile
+                          "minmax" : ogni colonna deve essere larga almeno 300px e può crescere fino a 1fr*/
+    gap: 2rem; /*definisce lo spazio tra le righe e le colonne*/
+}
+
+.card {  /* stile delle card*/
+    background: rgba(255, 255, 255,0.5); /*colore bianco con opacità (l'ultimo numero può andare da 0.0 cioè completamente trasparente a 1 che è completamente opaco)*/
+    -webkit-backdrop-filter: blur(5px); /*serve a farlo funzionare correttamente nei browser (chrome, safari). Stessa cosa della riga successiva (WEBKIT-> per Safari, quindi chi ha Mac o iPhone)*/
+    backdrop-filter: blur(5px);  /*applica un effetto grafico all'area dietro un elemento (BLUR-> sfocatura)*/
+    border: 5px solid rgba(255, 255, 255, 0.2); /*stile dei bordi (larghezza-stile-colore)*/
+    border-radius: 12px; /*arrotonda gli angoli della card*/
+    padding: 1.5rem; /*crea spazio tra il bordo della card e il contenuto*/
+    display: flex; /*dispone gli elementi all'interno della card in modo flessibile e reattivo, senza dover posizionare gli elementi*/
+    flex-direction: column; /*imposta la direzione di visualizzazione degli elementi flessibili*/
+    transition: all 0.2s ease-out; /*modificano i valori in modo fluido al passaggio del mouse.
+                                     "all": tutte le modifiche avverrano con l'animazione (colore, ombra, posizione)
+                                     "0.2s" : la durata
+                                     "ease-out" : la transizione terminerà lentamente */
+}
+.card:hover { /*"hover" -> pseudo-classe: applica gli stili solo quando l'utente passa il mouse sopra la card.*/
+    transform: translateY(-10px); /*"transform" : applica una trasformazione 2D all'elemento. "translateY" : sposta l'elemento, quindi la card, verso l'alto (asse y) di 10px.*/
+    box-shadow: 0 10px 3px rgba(0, 0, 0, 0.08);      /*applica l'ombra alla card quando si solleva.
+                                                     0 : l'ombra resta al centro
+                                                     10px : l'ombra si sposta verso il basso di 10px e quindi la card sembra sollevata
+                                                     3px : sfocatura del colore
+                                                     rgba(0,0,0,0.08) : colore nero con opacità (0.08 -> quasi invisibile l'ombra */
+}
+.card h3 { /*Titolo della card (gran caffè, copy smile...)*/
+    color: #E63946;
+    margin-bottom: 0.5rem; /*imposta il margine inferiore dell'elemento*/
+    font-size: 1.5rem;
+    font-weight: 800; /*imposta lo spessore dei caratteri*/
+}
+.card p { /*paragrafo card (testo generico, cioè l'indirizzo e cosa comprende lo sconto*/
+    font-size: 1rem;
+    margin-bottom: 0.25rem; /*margine inferiore*/
+    color: #000000;
+}
+.card .indirizzo { /*indirizzo all'interno della card*/
+    font-style: italic; /*corsivo*/
+    color:#000000;
+    margin-bottom: 1rem; /*margine inferiore*/
+}
+.card .offerta { /*si riferisce al testo in cui si spiega cosa comprende lo sconto*/
+    font-weight: 500; /*spessore*/
+    color: #000000;
+    margin-bottom: 1rem; /*margine inferiore*/
+    flex-grow: 1; /*specifica di quanto crescerà l'elemento rispetto al resto degli elementi flessibili all'interno dello stesso contenitore,
+                   cioè visto che le descrizioni delle offerte nelle card non sono della stessa lunghezza, scrivendo ciò accade che le descrizioni si "gonfiano"
+                   così da avere i bottoni sottostanti allineati*/
+}
+
+/*come i bottoni sono disposti sulla card */
+.card-actions {
+    display: flex; /*DISPLAY: specifica il comportamento di visualizzazione di un elemento
+                     FLEX: trasforma l'elemento in un contenitore flessibile a livello di blocco*/
+    flex-direction: column; /*specifica la direzione degli elementi flessibili -> in COLONNA*/
+    gap: 0.5rem;  /*definisce la dimensione dello spazio tra le righe (crea lo spazio tra un bottone e l'altro)*/
+}
+
+/*mettiamo uno stile base per tutti i bottoni  */
+.nav-btn, /*selettore di classe (è un link, in quanto porta l'utente all'esterno della pagina)*/
+.map-btn, /*è un bottone, in quanto apre dei modal che già sono nel codice HTML, quindi niente di esterno*/
+.review-btn { /*                   //                       */
+    display: block; /*visualizza un elemento come elemento di blocco, quindi il bottone si comporta come un blocco, occupando tutta la larghezza della card.*/
+    padding: 10px; /*spazio tra il contenuto (il testo) e il bordo*/
+    border-radius: 8px; /*definisce il raggio degli angoli dell'elemento, cioè arrotonda gli angoli del bottone*/
+    text-decoration: none; /* text-decoration: specifica la decorazione aggiunta al testo;
+                               none : elimina la linea sotto al link di avvia navigatore*/
+    font-size: 0.9rem; /*grandezza testo*/
+    font-weight: 600; /*spessore dei caratteri*/
+    text-align: center; /*text-align: allineamento orizzontale del testo
+                         center: centra il testo*/
+    cursor: pointer; /*esce la manina se metto il cursore non solo su avvia navigatore, ma anche su mappa e recensioni
+                     (se levo ciò su mappa e recensioni esce la solita freccia e non la manina, quindi non si capisce chiaramente che sono cliccabili)*/
+    transition: all 0.2s ease; /*consente di modificare i valori delle proprietà in modo fluido, per un periodo di tempo specificato.
+                                 ease: la transizione inizierà lentamente, poi andrà veloce e terminerà lentamente*/
+    border: none; /* rimuove il bordo predefinito dei bottoni HTML*/
 }
