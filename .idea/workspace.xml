@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti.">
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,6 +214,7 @@
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <MESSAGE value="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho disposto i bottoni sulla card e ho impostato uno stile per tutti." />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
