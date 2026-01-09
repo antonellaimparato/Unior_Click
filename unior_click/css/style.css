@@ -191,3 +191,32 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                    cioè visto che le descrizioni delle offerte nelle card non sono della stessa lunghezza, scrivendo ciò accade che le descrizioni si "gonfiano"
                    così da avere i bottoni sottostanti allineati*/
 }
+
+/*come i bottoni sono disposti sulla card */
+.card-actions {
+    display: flex; /*DISPLAY: specifica il comportamento di visualizzazione di un elemento
+                     FLEX: trasforma l'elemento in un contenitore flessibile a livello di blocco*/
+    flex-direction: column; /*specifica la direzione degli elementi flessibili -> in COLONNA*/
+    gap: 0.5rem;  /*definisce la dimensione dello spazio tra le righe (crea lo spazio tra un bottone e l'altro)*/
+}
+
+/*mettiamo uno stile base per tutti i bottoni  */
+.nav-btn, /*selettore di classe (è un link, in quanto porta l'utente all'esterno della pagina)*/
+.map-btn, /*è un bottone, in quanto apre dei modal che già sono nel codice HTML, quindi niente di esterno*/
+.review-btn { /*                   //                       */
+    display: block; /*visualizza un elemento come elemento di blocco, quindi il bottone si comporta come un blocco, occupando tutta la larghezza della card.*/
+    padding: 10px; /*spazio tra il contenuto (il testo) e il bordo*/
+    border-radius: 8px; /*definisce il raggio degli angoli dell'elemento, cioè arrotonda gli angoli del bottone*/
+    text-decoration: none; /* text-decoration: specifica la decorazione aggiunta al testo;
+                               none : elimina la linea sotto al link di avvia navigatore*/
+    font-size: 0.9rem; /*grandezza testo*/
+    font-weight: 600; /*spessore dei caratteri*/
+    text-align: center; /*text-align: allineamento orizzontale del testo
+                         center: centra il testo*/
+    cursor: pointer; /*esce la manina se metto il cursore non solo su avvia navigatore, ma anche su mappa e recensioni
+                     (se levo ciò su mappa e recensioni esce la solita freccia e non la manina, quindi non si capisce chiaramente che sono cliccabili)*/
+    transition: all 0.2s ease; /*consente di modificare i valori delle proprietà in modo fluido, per un periodo di tempo specificato.
+                                 ease: la transizione inizierà lentamente, poi andrà veloce e terminerà lentamente*/
+    border: none; /* rimuove il bordo predefinito dei bottoni HTML*/
+}
+

@@ -1,15 +1,13 @@
-// addEventListener serve per dire al codice di aspettare che tutta la pagina HTML si sia caricata e letta dal browser.
-// senza ciò cercheremo di modificare elementi che non esistono ancora.
+// addEventListener serve per dire al codice di aspettare che tutta la pagina HTML si sia caricata.
 document.addEventListener('DOMContentLoaded', function() {
 
-    // const convenzioni, all'interno definiamo tutte le convenzioni come un array di oggetti dove ogni oggetto rappresenta un locale e contiene tutte le informazioni necessarie.
-    // come ad esempio ID unico, offerta, tipo che serve per la ricerca, sede e cosi via. in più anche le coordinate lat/lng che servono per la mappa e navigatore
+    // DEFINIZIONE DATI (Database simulato)
     const convenzioni = [
         // Sede: giusso
-        { id: 1, nome: "Pappa e Pizza🍕", indirizzo: "Via Enrico De Marinis 6, 80134 Napoli", offerta: "Coupon cumulabili per ricevere pizze o menù in omaggio. (Esibire la nostra card per avere quella coupon)", tipo: "cibo pizza", sede: "giusso", lat: 40.8461, lng: 14.2566 },
-        { id: 2, nome: "Bar Orientale☕️", indirizzo: "Largo Giusso Girolamo 2, 80134 Napoli", offerta: "Colazione: caffè + cornetto, cappuccino + cornetto. Pranzo: consumazione + bibita. 10% di sconto sui tavoli (sempre).", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84573, lng: 14.25527 },
+        { id: 1, nome: "Pappa e Pizza🍕", indirizzo: "Via Enrico De Marinis 6, 80134 Napoli", offerta: "Coupon cumulabili per ricevere pizze o menù in omaggio.", tipo: "cibo pizza", sede: "giusso", lat: 40.8461, lng: 14.2566 },
+        { id: 2, nome: "Bar Orientale", indirizzo: "Largo Giusso Girolamo 2, 80134 Napoli", offerta: "Colazione: caffè + cornetto. Pranzo: consumazione + bibita. 10% di sconto.", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84573, lng: 14.25527 },
         { id: 6, nome: "120 Grammi🍝", indirizzo: "Via Mezzocannone 24, 80134 Napoli", offerta: "Pranzo: Acqua in omaggio accanto ad ogni vaschetta", tipo: "cibo pranzo pasta", sede: "giusso", lat: 40.8461, lng: 14.2566 },
-        { id: 8, nome: "O Grin🍽️", indirizzo: "Via Mezzocannone 83, 80134 Napoli", offerta: "Pranzo (asporto e al tavolo): Pasta del giorno, Panino con burger, Menù (insalata/panini + dolce + bibita), Menù (primo + dolce + bibita)", tipo: "cibo pranzo vegan", sede: "giusso", lat: 40.8465, lng: 14.2570 },
+        { id: 8, nome: "O Grin", indirizzo: "Via Mezzocannone 83, 80134 Napoli", offerta: "Pranzo (asporto e al tavolo): Pasta del giorno, Panino con burger, Menù vegan", tipo: "cibo pranzo vegan", sede: "giusso", lat: 40.8465, lng: 14.2570 },
         { id: 10, nome: "Bar Santa Chiara☕️", indirizzo: "Largo Banchi Nuovi 2, 80134 Napoli", offerta: "Colazione: caffè espresso + consumazione. Pranzo: bibita + pizzetta", tipo: "bar colazione pranzo", sede: "giusso", lat: 40.84531, lng: 14.25497 },
 
         // Sede: corigliano
@@ -26,36 +24,34 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 12, nome: "Uni Bar🏫", indirizzo: "Via Porta di Massa 6, 80133 Napoli", offerta: "Colazione: caffè espresso con cremina e consumazione. Pranzo: bibita e consumazione", tipo: "bar colazione pranzo", sede: "porta-coeli", lat: 40.84369, lng: 14.25814 }
     ];
 
-    // Qui catturiamo gli elementi della pagina HTML con la quale dovremo parlare, salvando ogni elemento in una variabile.
-    const cardContainer = document.getElementById('card-container');  // qui è dove inseriamo le card (ex griglia-locali)
-    const searchBar = document.getElementById('search-bar');     // la barra di ricerca
-    const sedeFilter = document.getElementById('sede-filter');   // qui la tendina della ricerca
+    // RIFERIMENTI HTML (Catturiamo gli elementi dalla pagina)
+    const cardContainer = document.getElementById('card-container'); // Contenitore delle card
+    const searchBar = document.getElementById('search-bar');         // Barra di ricerca
+    const sedeFilter = document.getElementById('sede-filter');       // Filtro sede
 
-    // Qui abbiamo i riferimenti all'interfaccia utente che riguardano le recensioni
-    const reviewModal = document.getElementById('review-modal'); // Il modale delle recensioni
+    // Riferimenti Modale Recensioni
+    const reviewModal = document.getElementById('review-modal');
+    const modalCloseBtn = document.getElementsByClassName('close')[0]; // IMPORTANTE: Questo è il tasto X
     const modalTitle = document.getElementById('modal-title');
-    const modalCloseBtn = document.getElementsByClassName('close')[0]
-    const reviewsListContainer = document.getElementById('reviews-list-container');  // qui tramite document.getElementById andiamo a cercare dentro HTML un elemento che ha ID 'reviews-list-container' e serve per mostrarci successivamente i commenti che vengono scritti.
-    const reviewForm = document.getElementById('review-form');  // questo è il modulo che ci serve per scrivere il commento
-    const reviewText = document.getElementById('review-text');  // qua abbiamo l'area del testo
-    const starRatingInput = document.querySelector('.star-rating-input');  // starRatingInput abbiamo una query che ci permette di cliccare sulle stelle per lasciare le recensioni.
+    const reviewsListContainer = document.getElementById('reviews-list-container');
+    const reviewForm = document.getElementById('review-form');
+    const reviewText = document.getElementById('review-text');
+    const starRatingInput = document.querySelector('.star-rating-input');
 
-    // Riferimenti all'interfaccia utente per le mappe
+    // Riferimenti Modale Mappa
     const mapModal = document.getElementById('map-modal');
     const mapModalTitle = document.getElementById('map-modal-title');
-    const mapCloseBtn = document.getElementById('map-close-btn');
-    let map;  // variabile che ci serve per mantenere l'istanza della mappa Leaflet
+    const mapCloseBtn = document.getElementsByClassName('close')[1]; // IMPORTANTE: Questo è il tasto X della mappa
+    let map = null; // Variabile per la mappa
 
-    // Variabile per tenere il voto che si mette alle stelle per le recensioni
     let currentStarRating = 0;
 
-    // qui creo l'HTML per una singola card
+    // --- FUNZIONI DI CREAZIONE INTERFACCIA ---
+
+    // Crea l'HTML della singola card
     function createCardHTML(convenzione) {
-        // questo URL viene collegato al tasto 'Avvia Navigatore', creo la variabile navUrl ci passo l'URL di maps e tramite il commando 'daddr' dico al dispositivo di calcolare il percorso
         const navUrl = `https://maps.google.com/maps?daddr=${convenzione.lat},${convenzione.lng}`;
-        // uso i backtick ovvero accenti gravi per poter inserire le variabili dentro HTML
-        // "data-id", "data-nome" ecc servono per nascondere queste informazioni dentro il bottone, cosi quando ci clicco sopra posso recuperarli facilmente poi nel codice.
-        return `  
+        return `
             <div class="card">
                 <h3>${convenzione.nome}</h3>
                 <p class="indirizzo">${convenzione.indirizzo}</p>
@@ -82,11 +78,9 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Qui costruisco la pagina con le sue 4 sezioni, organizzando in sezioni per le sedi.
+    // Mostra tutte le card divise per sede
     function populateGroupedConvenzioni() {
         cardContainer.innerHTML = ''; // Pulisco tutto
-
-        // Definisco le sedi manualmente
         const sedi = [
             { id: 'mediterraneo', titolo: 'Palazzo del Mediterraneo' },
             { id: 'giusso', titolo: 'Palazzo Giusso' },
@@ -94,120 +88,103 @@ document.addEventListener('DOMContentLoaded', function() {
             { id: 'corigliano', titolo: 'Palazzo Corigliano' }
         ];
 
-        // mentre qua tramite if giro su ogni sezione per creare il titolo e le card
         sedi.forEach(function(sedeObj) {
-
             // Filtro le convenzioni per questa sede specifica
             const convenzioniSede = convenzioni.filter(function(c) {
                 return c.sede === sedeObj.id;
             });
 
-            // controllo se ci sono locali per questa sede, se è vuota non creo nulla
             if (convenzioniSede.length > 0) {
-                // Creo il titolo della sezione
                 let sezioneHTML = `
                     <section class="sede-section">
                         <h2 id="${sedeObj.id}" class="sede-heading">${sedeObj.titolo}</h2>
                         <div class="card-grid">
                 `;
-
-                // Aggiungo tutte le card di questa sede concatenando HTML generato da createCardHTML
                 convenzioniSede.forEach(function(conv) {
                     sezioneHTML += createCardHTML(conv);
                 });
-
                 sezioneHTML += `</div></section>`;
-
-                cardContainer.innerHTML += sezioneHTML; // per poi aggiungerlo alla pagina
+                cardContainer.innerHTML += sezioneHTML;
             }
         });
     }
 
-    // displayFilteredConvenzioni serve per la ricerca in base a ciò che scrivo dentro la barra di ricerca.
+    // Filtra i locali in base alla ricerca
     function displayFilteredConvenzioni(searchTerm) {
-        // qui uso filter per cercare se il testo scritto è contenuto nel nome, indirizzo o tipo del locale
         const filtered = convenzioni.filter(function(c) {
             return c.nome.toLowerCase().includes(searchTerm) ||
                 c.indirizzo.toLowerCase().includes(searchTerm) ||
                 c.tipo.toLowerCase().includes(searchTerm);
         });
 
-        cardContainer.innerHTML = ''; // pulisco la griglia prima di far vedere i risultati
-
-        // se la lista dei trovati è vuota, mostro un messaggio di avviso
+        cardContainer.innerHTML = '';
         if (filtered.length === 0) {
             cardContainer.innerHTML = '<p class="no-results">Nessuna convenzione trovata.</p>';
             return;
         }
 
         let gridHTML = '<div class="card-grid">';
-
-        // e dopo mostro solo i risultati trovati
         filtered.forEach(function(conv) {
             gridHTML += createCardHTML(conv);
         });
-
         gridHTML += '</div>';
-        cardContainer.innerHTML = gridHTML; // qui inserisco il risultato finale nella pagina
+        cardContainer.innerHTML = gridHTML;
     }
 
-    //  FUNZIONI PER LE RECENSIONI
+    // --- FUNZIONI PER LE RECENSIONI ---
 
-    // setStarsVisual serve per colorare le stelle quando ci passo con mouse sopra oppure ci clicco.
+    // Gestione visiva delle stelle
     function setStarsVisual(rating) {
-        const stelle = starRatingInput.querySelectorAll('span'); // prendo tutte le stelle
-        // giro su ogni stella per decidere se accenderla o spegnerla
-        stelle.forEach(function(star) {
-            // se il numero della stella è minore o uguale al voto, le do la classe selezionata
+        const stars = starRatingInput.querySelectorAll('span');
+        stars.forEach(function(star) {
             if (parseInt(star.dataset.value) <= rating) {
                 star.classList.add('selected');
             } else {
-                star.classList.remove('selected'); // altrimenti la faccio tornare bianca
+                star.classList.remove('selected');
             }
         });
     }
 
-    // qui resetto le stelle a zero quando chiudo il pop-up
     function resetStarRatingInput() {
         currentStarRating = 0;
         setStarsVisual(0);
     }
 
-    // openReviewModal mi serve per aprire il pop-up delle recensioni
+    // APRIRE IL MODALE (Metodo W3Schools: display block)
     function openReviewModal(conventionId, conventionName) {
         modalTitle.textContent = `Recensioni per ${conventionName}`;
-        reviewModal.dataset.currentId = conventionId;  // salvo l'ID del locale nel modal per sapere a chi devo salvare la recensione dopo
-        loadReviews(conventionId); // loadReviews mi carica i vecchi commenti
-        reviewModal.classList.remove('hidden'); // tolgo la classe 'hidden' per rendere visibile il modale
+        reviewModal.dataset.currentId = conventionId;
+        loadReviews(conventionId);
+
+        // MODIFICA W3SCHOOLS: Cambio lo stile CSS direttamente
+        reviewModal.style.display = "block";
+
         resetStarRatingInput();
-        reviewText.value = ''; // qui invece pulisco l'area di testo per scrivere una nuova recensione
+        reviewText.value = '';
     }
 
+    // CHIUDERE IL MODALE (Metodo W3Schools: display none)
     function closeReviewModal() {
-        reviewModal.classList.add('hidden');  // chiudo la classe (aggiungo hidden)
+        // MODIFICA W3SCHOOLS: Nascondo cambiando lo stile CSS
+        reviewModal.style.display = "none";
     }
 
-    // a questo punto carico le recensioni dalla memoria del browser 'localStorage'
+    // Carica commenti dal LocalStorage
     function loadReviews(conventionId) {
         reviewsListContainer.innerHTML = '';
-        // successivamente prendo la parte della memoria salvata sul browser e la trasformo in oggetti JavaScript ovvero JSON.parse
         const allReviews = JSON.parse(localStorage.getItem('unioriclick_reviews')) || {};
         const conventionReviews = allReviews[conventionId] || [];
 
-        // se non ci sono commenti per questo locale, mostro un messaggio
         if (conventionReviews.length === 0) {
             reviewsListContainer.innerHTML = '<p class="no-reviews">Nessuna recensione ancora.</p>';
             return;
         }
 
-        // forEach recensione vado a creare il blocco HTML con le stelle e il testo
         conventionReviews.forEach(function(review) {
-            const reviewElement = document.createElement('div'); // creo un nuovo DIV che mi serve per come contenitore generico a livello di blocco
-            reviewElement.classList.add('review-item'); // gli assegno la classe CSS
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review-item');
 
-            // genero le 5 stelle
             let starsHTML = '<div class="star-rating-display">';
-            // con il ciclo iterativo FOR ciclo da 1 a 5 per creare le stelle gialle o bianche in base al voto
             for (let i = 1; i <= 5; i++) {
                 if (i <= review.stars) {
                     starsHTML += '<span class="star-filled">★</span>';
@@ -216,97 +193,84 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             starsHTML += '</div>';
-
-            // inserisco HTML delle stelle e il testo del commento dentro il div
             reviewElement.innerHTML = starsHTML + '<p>' + review.text + '</p>';
-            reviewsListContainer.appendChild(reviewElement); // e poi aggiungo il commento completo alla lista
+            reviewsListContainer.appendChild(reviewElement);
         });
     }
 
-    // Salvo una nuova recensione nel localStorage
+    // Salva commento nel LocalStorage
     function saveReview(conventionId, stars, text) {
-        // leggo tutto ciò che già c'era di salvato
         const allReviews = JSON.parse(localStorage.getItem('unioriclick_reviews')) || {};
-
-        // se è la prima recensione allora creo una nuova lista vuota
         if (!allReviews[conventionId]) {
             allReviews[conventionId] = [];
         }
-        // creo una nuova variabile recensioni (oggetto)
-        const newReview = {
-            stars: stars,
-            text: text
-        };
-        // e lo aggiungo alla lista
+        const newReview = { stars: stars, text: text };
         allReviews[conventionId].push(newReview);
-        // salvo di nuovo tutto nel browser trasformando in testo JSON.stringify.
         localStorage.setItem('unioriclick_reviews', JSON.stringify(allReviews));
     }
 
-    // funzioni per la mappa leaflet
+    // --- FUNZIONI PER LA MAPPA LEAFLET ---
 
+    // APRIRE LA MAPPA (Metodo W3Schools)
     function openMapModal(nome, lat, lng) {
         mapModalTitle.textContent = `Mappa per ${nome}`;
-        mapModal.classList.remove('hidden'); // per prima cosa rendo visibile il contenitore della mappa
-        // siccome leaflet a volte si confonde e non disegna bene gli do un piccolo ritardo per aprire il pop-up e disegnare la mappa
+
+        // MODIFICA W3SCHOOLS: display block
+        mapModal.style.display = "block";
+
         setTimeout(function() {
             if (map) {
-                map.remove(); // poi se c'era già una mappa la cancello
+                map.remove();
             }
-
-            // creo la mappa Leaflet e assegno il valore di 17 che è lo zoom
             /* global L */
             map = L.map('mapid').setView([lat, lng], 17);
-
-            // aggiungo lo sfondo della mappa 'openstreetmap'
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                attribution: '© OpenStreetMap contributors'
             }).addTo(map);
-
-            // aggiungo il marker ovvero il puntino rosso
             const marker = L.marker([lat, lng]).addTo(map);
             marker.bindPopup(`<b>${nome}</b>`).openPopup();
         }, 100);
     }
 
+    // CHIUDERE LA MAPPA (Metodo W3Schools)
     function closeMapModal() {
-        mapModal.classList.add('hidden');
+        // MODIFICA W3SCHOOLS: display none
+        mapModal.style.display = "none";
+
         if (map) {
-            map.remove(); // ad ogni chiusura della mappa la distruggo per risparmiare memoria
+            map.remove();
             map = null;
         }
     }
 
-    // parte della gestione degli eventi
+    // --- GESTIONE DEGLI EVENTI ---
 
-    // qui nella tendina quando premo e cambio sede, mi scorre la pagina fino alla sede scelta
+    // Filtro Sede
     sedeFilter.addEventListener('change', function(e) {
         const selectedID = e.target.value;
         const elementToScrollTo = document.getElementById(selectedID);
         if (elementToScrollTo) {
-            elementToScrollTo.scrollIntoView({ behavior: 'smooth', block: 'start' }); // qui scorro fino all'elemento specifico
+            elementToScrollTo.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 
-    // qui ci troviamo nella barra di ricerca, quando scrivo qualcosa mi filtra le card in tempo reale
+    // Barra di ricerca
     searchBar.addEventListener('keyup', function(e) {
         const searchTerm = e.target.value.toLowerCase();
         if (searchTerm.length > 0) {
             displayFilteredConvenzioni(searchTerm);
         } else {
-            populateGroupedConvenzioni(); // se dopo if cancello tutto nella barra di ricerca mi deve rimostrare tutta la lista
+            populateGroupedConvenzioni();
         }
     });
 
-    // qua controllo i click sui vari bottoni (tramite delegazione eventi sulla griglia)
+    // Delegazione eventi sulla griglia (click bottoni Recensioni e Mappa)
     cardContainer.addEventListener('click', function(e) {
-        // questo pezzo mi serve per vedere se ho cliccato su recensioni
         if (e.target.classList.contains('review-btn')) {
             const id = e.target.dataset.id;
             const nome = e.target.dataset.nome;
             openReviewModal(id, nome);
         }
-        // quest'altro se ho cliccato su mappa
         if (e.target.classList.contains('map-btn')) {
             const nome = e.target.dataset.nome;
             const lat = e.target.dataset.lat;
@@ -315,25 +279,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // qua vado a gestire la chiusura dei Modal o tramite la X o sullo sfondo
+    // --- GESTIONE CHIUSURA MODALI (CORREZIONE W3SCHOOLS) ---
+
+    // 1. Chiusura Recensioni (Tasto X)
     modalCloseBtn.addEventListener('click', closeReviewModal);
+
+    // 2. Chiusura Recensioni (Click fuori dallo sfondo)
     reviewModal.addEventListener('click', function(e) {
-        // qui se clicco sullo sfondo scuro e non dentro la finestra bianca chiudo tutto
         if (e.target === reviewModal) {
             closeReviewModal();
         }
     });
 
-    // l'invio del form quando premo su invia recensione
+    // 3. Invio Recensione
     reviewForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // qua blocco il refresh della pagina
-        const newReviewText = reviewText.value.trim(); // tolgo gli spazi vuoti sia all'inizio che alla fine
+        e.preventDefault();
+        const newReviewText = reviewText.value.trim();
         const conventionId = reviewModal.dataset.currentId;
 
-        // se ho scritto qualcosa e ho dato un voto allora lo salvo
         if (newReviewText && currentStarRating > 0) {
             saveReview(conventionId, currentStarRating, newReviewText);
-            loadReviews(conventionId); // loadReviews mi serve per mostrare il nuovo commento
+            loadReviews(conventionId);
             resetStarRatingInput();
             reviewText.value = '';
         } else if (currentStarRating === 0) {
@@ -341,37 +307,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    //  chiusura del Modal Mappa
+    // 4. Chiusura Mappa (Tasto X)
     mapCloseBtn.addEventListener('click', closeMapModal);
+
+    // 5. Chiusura Mappa (Click fuori)
     mapModal.addEventListener('click', function(e) {
         if (e.target === mapModal) {
             closeMapModal();
         }
     });
 
-    // sezione per gestire la parte interattiva delle stelle
-
-    // Aggiunge gli eventi a ogni stella
-    const stelleInput = starRatingInput.querySelectorAll('span');
-    stelleInput.forEach(function(star) {
-
-        // setStarsVisual serve per illuminare le stelle quando ci passo con il mouse sopra
+    // Gestione interazione stelle
+    const starsInput = starRatingInput.querySelectorAll('span');
+    starsInput.forEach(function(star) {
         star.addEventListener('mouseover', function() {
             setStarsVisual(parseInt(star.dataset.value));
         });
-
-        // qua quando clicco sulla stella deve fissare il voto
         star.addEventListener('click', function() {
             currentStarRating = parseInt(star.dataset.value);
             setStarsVisual(currentStarRating);
         });
     });
 
-    // con mouseout mi mostra il voto assegnato o le stelle vuote non colorate
     starRatingInput.addEventListener('mouseout', function() {
         setStarsVisual(currentStarRating);
     });
 
-    //  mi dice che è tutto pronto e quindi può disegnare la pagina
+    // Avvio iniziale della pagina
     populateGroupedConvenzioni();
+
+    // Nascondo esplicitamente i modali all'avvio per sicurezza
+    reviewModal.style.display = "none";
+    mapModal.style.display = "none";
 });
