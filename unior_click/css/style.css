@@ -197,7 +197,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     display: flex; /*DISPLAY: specifica il comportamento di visualizzazione di un elemento
                      FLEX: trasforma l'elemento in un contenitore flessibile a livello di blocco*/
     flex-direction: column; /*specifica la direzione degli elementi flessibili -> in COLONNA*/
-    gap: 0.5rem; /*definisce la dimensione dello spazio tra le righe (crea lo spazio tra un bottone e l'altro)*/
+    gap: 0.5rem;  /*definisce la dimensione dello spazio tra le righe (crea lo spazio tra un bottone e l'altro)*/
 }
 
 /*mettiamo uno stile base per tutti i bottoni  */
