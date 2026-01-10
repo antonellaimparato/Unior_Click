@@ -3,9 +3,7 @@
     margin: 0;   /*Imposta il margine esterno a zero per tutti i lati.*/
     padding: 0;  /*Imposta il padding interno a zero per tutti i lati.*/
 }
-html {
-    scroll-behavior: smooth;   /*Dona un effetto di scorrimento fluido al documento*/
-}
+
 body {
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Arial, Verdana, sans-serif;  /*font-family specifica il font, e inserisco vari font in questo modo siamo sicuri che almeno uno il browser lo legge */
 
@@ -147,7 +145,6 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
 
 .card {  /* stile delle card*/
     background: rgba(255, 255, 255,0.5); /*colore bianco con opacità (l'ultimo numero può andare da 0.0 cioè completamente trasparente a 1 che è completamente opaco)*/
-    -webkit-backdrop-filter: blur(5px); /*serve a farlo funzionare correttamente nei browser (chrome, safari). Stessa cosa della riga successiva (WEBKIT-> per Safari, quindi chi ha Mac o iPhone)*/
     backdrop-filter: blur(5px);  /*applica un effetto grafico all'area dietro un elemento (BLUR-> sfocatura)*/
     border: 5px solid rgba(255, 255, 255, 0.2); /*stile dei bordi (larghezza-stile-colore)*/
     border-radius: 12px; /*arrotonda gli angoli della card*/
