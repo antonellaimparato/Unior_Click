@@ -258,3 +258,70 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     border-radius: 12px; /*arrotonda gli angoli del riquadro*/
     padding: 20px; /*crea lo spazio tra il contenuto, quindi il testo, e i bordi del riquadro*/
 }
+footer {
+    text-align: center;  /* questa proprietà allinea orizzontalmente il  contenuto testuale al centro */
+    padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo */
+    margin-top: 3rem; /* aggiungo margine superiore in modo da separare l'elemento da ciò che lo precede */
+    background-color: rgba(0,0,0,0.1); /* imposto il colore di sfondo che è un nero molto trasparente in formato RGBA. Il quarto valore rappresenta l'opacità*/
+    color: #f0f0f0; /* imposto il colore del testo */
+    font-size: 0.9rem; /* imposto la grandezza del font */
+    border-top: 1px solid rgba(255, 255, 255, 0.18); /*  imposto  il bordo superiore di 1 pixel, solido e semitrasparente */
+}
+.modal-backdrop {
+    display: none;  /* nascondo l'elemento di  default, in modo che risulti invisibile finchè il modal non viene attivato */
+    position: fixed; /* imposto l'elemento in una posizione fissa, in questo modo che rimane ancorato alla viewport anche durante lo scroll. */
+    z-index: 1000; /* posiziono  il modal sopra gli altri elementi della pagina*/
+    padding-top: 100px; /*aggiungo spazio tra il bordo superiore dell'elemento e il suo contenuto */
+    top: 0; /* sposto l'elemento in verticale dall'alto */
+    left: 0; /* sposto l'elemento in orizzonatale da sinistra  */
+    width: 100%; /* imposto la lareghezza*/
+    height: 100%; /* imposto l'altezza*/
+    overflow: auto; /* aggiungo una barra di scorrimento  se il contenuto è troppo grande */
+    background: rgba(0, 0, 0, 0.35); /* imposto il colore dello sfondo dell'elemento */
+    backdrop-filter: blur(10px);     /* con questa funzione applico il blur ad un elemento  */
+    -webkit-backdrop-filter: blur(10px); /*Serve per far funzionare l'effetto blur nei browser basati su WebKit (es. Safari) */
+}
+.modal-content {
+
+    background: rgba(255, 255, 255, 0.85);  /*imposto uno sfondo  semi-trasparente,  in combinazione con gli elementi successivi ottengo un effetto vetro  */
+    backdrop-filter: blur(15px); /*  imposto la sfocatura agli elementi allo sfondo retrostante al modale */
+    -webkit-backdrop-filter: blur(15px); /* uso -webkit per far funzionare l'effetto blur nei browser basati su WebKit (Safari) */
+    color: #1d1d1f; /* imposto il colore del testo */
+    padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo*/
+    border-radius: 12px; /* arrotondo i bordi dell'elemento */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* con questa proprietà applico  ombre all'elemento */
+    margin: 15% auto;  /* imposto il margine superiore e inferiorre al 15%, auto fa sì che il browser calcoli automaticamente lo spazio orizzontale, centrando l’elemento rispetto al contenitore.*/
+    width: 90%; /* imposto la larghezza */
+    max-width: 600px; /* definisco la larghezza massima dell'elemento */
+    box-sizing: border-box; /* il padding e il bordo sono inclusi nel calcolo della larghezza dell'elemento */
+    max-height: 80vh; /* imposto l'altezza massima */
+    overflow-y: auto; /*  il contenuto supera i bordi superiore/inferiore, aggiunge una barra di scorrimento */
+    position: relative; /* l'elemento viene posizionato rispetto alla sua poszione normale nel flusso */
+}
+.close {
+    color: #aaaaaa;
+    float: right; /* specifico come un elemento si deve muovere all'interno del testo */
+    font-size: 28px; /* imposto la dimensione del carattere */
+    font-weight: bold; /* imposto lo spessore del carattere */
+}
+
+.close:hover, /* utilizzo la pseudoclasse hover in modo da selezionare gli elementi quando il mouse passa sopra  */
+.close:focus {  /* uso questa pseudo classe per selezionare l'elemento e definire lo stile dell'elemento su cui viene attivato il focus. */
+    color: #000; /* cambio il colore del testo in nero quando è attivo hover o focus */
+    text-decoration: none; /* rimuovo eventuali decorazioni del testo come ad esempio le decorazioni  */
+    cursor: pointer; /* cambio il cursore in "mano" per indicare che è cliccabile */
+}
+
+#mapid {
+    width: 100%; /*imposto la larghezza */
+    height: 400px; /* imposto l'altezza  */
+    margin-top: 1rem; /*  aggiungo margine superiore in modo da separare l'elemento da ciò che lo precede  */
+    border-radius: 10px; /* arrotondo i bordi dell'elemento*/
+    border: 1px solid #f0f0f0; /* definisco il bordo dell'elemento */
+}
+
+
+.modal-content h2 {
+    color: #E63946; /* imposto il colore del testo  */
+    margin-bottom: 1.5rem; /* imposto il margine inferiore dell'elemento  */
+}
