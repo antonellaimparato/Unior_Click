@@ -255,7 +255,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                                       quando cerco una convenzione nella barra di ricerca e non c'è*/
     font-style: italic; /*corsivo*/
     color: #000000; /*colore della scritta*/
-    font-size: 18px; /*grandezza della scritta*/
+    font-size: 1.5rem; /*grandezza della scritta*/
     text-align: center; /*allinea il testo al centro*/
     background: rgba(255, 255, 255, 0.6); /*sfondo del riquadro*/
     border-radius: 12px; /*arrotonda gli angoli del riquadro*/
