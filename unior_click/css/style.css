@@ -220,3 +220,44 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     border: none; /* rimuove il bordo predefinito dei bottoni HTML*/
 }
 
+/*stile per Avvia Navigatore */
+.nav-btn { /*selettore di classe (link esterno)*/
+    background: rgba(255, 255, 255, 0.4); /*sfondo bianco con opacità 0.4 quindi quasi trasparente*/
+    backdrop-filter: blur(5px); /*applica un effetto grafico all'area dietro un elemento, in questo caso sfoca ciò che sta sotto il bottone*/
+    border: 1px solid white; /*larghezza del bordo, stile cioè in questo caso una linea e colore*/
+    color: #000; /*testo nero*/
+}
+.nav-btn:hover { /*hover-> quando passa il mouse sopra*/
+    background: rgba(255, 255, 255, 0.7); /*sfondo bianco con opacità, quindi
+                                           l'opacità dello sfondo aumenta quando si passa sopra con il mouse*/
+}
+
+/*stile per Mostra Mappa */
+.map-btn { /*selettore di classe*/
+    background-color: #1E90FF;
+    color: #ffffff; /*colore del testo*/
+}
+.map-btn:hover { /*.map-btn è il selettore di classe*/ /*:hover è la pseudo-classe che si attiva solo quando passa il mouse*/
+    background-color: #00BFFF; /*cambia colore, diventa azzurro piu chiaro, quando passa il mouse*/
+}
+
+/*stile per Recensioni */
+.review-btn { /*selettore di classe*/
+    background-color: #FF0000;
+    color: #ffffff; /*colore del testo, quindi della scritta "Recensioni"*/
+}
+.review-btn:hover { /*selettore di classe con la pseudo-classe che si attiva quando passa il mouse*/
+    background-color: #FF6347; /*cambia il colore quando passa il mouse*/
+}
+
+
+.no-results { /*selettore di classe e corrisponde alla scritta "Nessuna convenzione trovata"
+                                      quando cerco una convenzione nella barra di ricerca e non c'è*/
+    font-style: italic; /*corsivo*/
+    color: #000000; /*colore della scritta*/
+    font-size: 18px; /*grandezza della scritta*/
+    text-align: center; /*allinea il testo al centro*/
+    background: rgba(255, 255, 255, 0.6); /*sfondo del riquadro*/
+    border-radius: 12px; /*arrotonda gli angoli del riquadro*/
+    padding: 20px; /*crea lo spazio tra il contenuto, quindi il testo, e i bordi del riquadro*/
+}
