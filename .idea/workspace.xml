@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho definito lo stile del textarea, ho aggiunto un bordo rosso quando riceve il focus. Ho stilizzato il pulsante con colori e bordi per renderlo più evidente e ho sistemato la mappa.">
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +79,6 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
-      <workItem from="1768125281152" duration="4569000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -180,23 +176,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767911658757</updated>
     </task>
-    <task id="LOCAL-00013" summary="Ho definito lo stile del textarea, ho aggiunto un bordo rosso quando riceve il focus. Ho stilizzato il pulsante con colori e bordi per renderlo più evidente e ho sistemato la mappa.">
-      <option name="closed" value="true" />
-      <created>1768129257571</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1768129257571</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Ho definito lo stile del textarea, ho aggiunto un bordo rosso quando riceve il focus. Ho stilizzato il pulsante con colori e bordi per renderlo più evidente e ho sistemato la mappa.">
-      <option name="closed" value="true" />
-      <created>1768129430623</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1768129430623</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +197,6 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
-    <MESSAGE value="Ho definito lo stile del textarea, ho aggiunto un bordo rosso quando riceve il focus. Ho stilizzato il pulsante con colori e bordi per renderlo più evidente e ho sistemato la mappa." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho definito lo stile del textarea, ho aggiunto un bordo rosso quando riceve il focus. Ho stilizzato il pulsante con colori e bordi per renderlo più evidente e ho sistemato la mappa." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
   </component>
 </project>

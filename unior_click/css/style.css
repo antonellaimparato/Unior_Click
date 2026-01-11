@@ -358,3 +358,35 @@ footer {
 .leaflet-container {
     z-index: 1; /* posiziono la mappa sopra gli altri elementi */
 }
+
+
+/*stelle delle recensioni*/
+.star-rating-input span { /*definisco lo stile di ogni SINGOLA stella, in quanto lo span rappresenta una singola stella*/
+    font-size: 4rem; /*grandezza stelle*/
+    color: #b3b3b3; /*tonalità di grigio per le stelle vuote*/
+    cursor: pointer; /*esce il cursore a manina se passo sulle stelle così da capire che sono cliccabili (da freccia a manina)*/
+}
+.star-rating-input span:hover { /*selettore di classe con la pseudo-classe (:hover) che si attiva quando passa il mouse
+                                /*quando passa il mouse sulla singola stella cambia colore*/
+    color: #FFD700; /*la stella da grigia diventa gialla*/
+}
+
+.star-rating-input span.selected { /*prendo le stelle(span) dentro il contenitore delle recensioni
+                                   ma solo quelle che hanno la classe 'selected' (cioè quelle cliccate)*/
+    color: #FFD700; /*le stelle diventano e restano gialle*/
+
+    /*quindi prima (riga 367) solo al passaggio del mouse diventavano gialle
+      mentre adesso RESTANO gialle*/
+}
+
+/*contenitore delle stelle visualizzate nei commenti*/
+.star-rating-display { /*selettore di classe*/
+    font-size: 1rem; /*grandezza delle stelle di una recensione fatta*/
+    margin-bottom: 0.5rem; /*spazio inferiore alle stelle, cioè tra le stelle selezionate e la recensione sottostante*/
+}
+.star-rating-display .star-filled {
+    color: #FFD700; /*colora di giallo le stelle che rappresentano il voto dato*/
+}
+.star-rating-display .star-empty {
+    color: #b3b3b3; /*colora di grigio le stelle mancanti per arrivare a 5, quindi quelle non selezionate*/
+}
