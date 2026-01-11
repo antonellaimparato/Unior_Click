@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho lavorato sulle stelle all'interno delle recensioni, in particolar modo da colore grigio al passaggio del mouse diventano gialle, restano gialle e quando visualizzo le recensioni registrate noto che le stelle selezionate sono gialle mentre le altre restano grigie.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)">
+      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,15 +178,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767911658757</updated>
     </task>
-    <task id="LOCAL-00013" summary="Ho lavorato sulle stelle all'interno delle recensioni, in particolar modo da colore grigio al passaggio del mouse diventano gialle, restano gialle e quando visualizzo le recensioni registrate noto che le stelle selezionate sono gialle mentre le altre restano grigie.">
-      <option name="closed" value="true" />
-      <created>1768130297139</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1768130297139</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +199,6 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
-    <MESSAGE value="Ho lavorato sulle stelle all'interno delle recensioni, in particolar modo da colore grigio al passaggio del mouse diventano gialle, restano gialle e quando visualizzo le recensioni registrate noto che le stelle selezionate sono gialle mentre le altre restano grigie." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho lavorato sulle stelle all'interno delle recensioni, in particolar modo da colore grigio al passaggio del mouse diventano gialle, restano gialle e quando visualizzo le recensioni registrate noto che le stelle selezionate sono gialle mentre le altre restano grigie." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
   </component>
 </project>
