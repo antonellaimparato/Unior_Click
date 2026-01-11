@@ -326,6 +326,8 @@ footer {
     color: #E63946; /* imposto il colore del testo  */
     margin-bottom: 1.5rem; /* imposto il margine inferiore dell'elemento  */
 }
+
+
 #review-form textarea { /* descendent combinator */
     width: 100%; /* imposto la larghezza */
     min-height: 80px; /* imposto l'altezza minima */
