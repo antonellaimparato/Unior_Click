@@ -258,6 +258,8 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     border-radius: 12px; /*arrotonda gli angoli del riquadro*/
     padding: 20px; /*crea lo spazio tra il contenuto, quindi il testo, e i bordi del riquadro*/
 }
+
+
 footer {
     text-align: center;  /* questa proprietà allinea orizzontalmente il  contenuto testuale al centro */
     padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo */
@@ -279,13 +281,12 @@ footer {
     overflow: auto; /* aggiungo una barra di scorrimento  se il contenuto è troppo grande */
     background: rgba(0, 0, 0, 0.35); /* imposto il colore dello sfondo dell'elemento */
     backdrop-filter: blur(10px);     /* con questa funzione applico il blur ad un elemento  */
-    -webkit-backdrop-filter: blur(10px); /*Serve per far funzionare l'effetto blur nei browser basati su WebKit (es. Safari) */
 }
+
 .modal-content {
 
     background: rgba(255, 255, 255, 0.85);  /*imposto uno sfondo  semi-trasparente,  in combinazione con gli elementi successivi ottengo un effetto vetro  */
     backdrop-filter: blur(15px); /*  imposto la sfocatura agli elementi allo sfondo retrostante al modale */
-    -webkit-backdrop-filter: blur(15px); /* uso -webkit per far funzionare l'effetto blur nei browser basati su WebKit (Safari) */
     color: #1d1d1f; /* imposto il colore del testo */
     padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo*/
     border-radius: 12px; /* arrotondo i bordi dell'elemento */
@@ -298,6 +299,7 @@ footer {
     overflow-y: auto; /*  il contenuto supera i bordi superiore/inferiore, aggiunge una barra di scorrimento */
     position: relative; /* l'elemento viene posizionato rispetto alla sua poszione normale nel flusso */
 }
+
 .close {
     color: #aaaaaa;
     float: right; /* specifico come un elemento si deve muovere all'interno del testo */
@@ -324,4 +326,34 @@ footer {
 .modal-content h2 {
     color: #E63946; /* imposto il colore del testo  */
     margin-bottom: 1.5rem; /* imposto il margine inferiore dell'elemento  */
+}
+#review-form textarea { /* descendent combinator */
+    width: 100%; /* imposto la larghezza */
+    min-height: 80px; /* imposto l'altezza minima */
+    padding: 12px; /* applico lo spazio tra il contenuto e il bordo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;; /* applico i font*/
+    font-size: 1rem; /* stabilisco la grandezza del font  */
+    border: 1px solid #dcdcdc; /*  applico un bordo solido con la dimensione di 1 px */
+    border-radius: 10px; /* arrotondo i bordi dell'elemento */
+    margin-bottom: 1rem; /* applico il margine inferiore  */
+    background-color: #f0f0f0; /* imposto il colore dello sfondo dell'elemento*/
+}
+
+#review-form textarea:focus {   /* uso questa pseudoclasse per selezionare e definire lo stile quando  sul textarea viene attivato il focus*/
+    outline: 2px solid #E63946; /* imposto il contorno della textarea di colore rosso  */
+}
+
+#review-form button {
+    background-color: #E63946; /* imposto il colore dello sfondo */
+    color: white; /* imposto come bianco il colore del testo */
+    font-weight: 600; /* stabilisco lo spessore dei caratteri */
+    padding: 12px; /* imposto la distanza tra il contenuto e il bordo dell'elemento */
+    border: none; /* stabilisco che non c'è nessun bordo */
+    border-radius: 8px; /* arrotondo i bordi dell'elemento */
+    cursor: pointer;  /*  imposto il cursore a forma di mano per indicare che è cliccabile   */
+    font-size: 1rem; /* stabilisco la grandezza del font */
+}
+
+.leaflet-container {
+    z-index: 1; /* posiziono la mappa sopra gli altri elementi */
 }
