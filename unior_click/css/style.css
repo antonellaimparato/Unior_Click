@@ -284,7 +284,6 @@ footer {
 }
 
 .modal-content {
-
     background: rgba(255, 255, 255, 0.85);  /*imposto uno sfondo  semi-trasparente,  in combinazione con gli elementi successivi ottengo un effetto vetro  */
     backdrop-filter: blur(15px); /*  imposto la sfocatura agli elementi allo sfondo retrostante al modale */
     color: #1d1d1f; /* imposto il colore del testo */
