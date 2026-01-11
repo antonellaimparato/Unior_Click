@@ -3,9 +3,7 @@
     margin: 0;   /*Imposta il margine esterno a zero per tutti i lati.*/
     padding: 0;  /*Imposta il padding interno a zero per tutti i lati.*/
 }
-html {
-    scroll-behavior: smooth;   /*Dona un effetto di scorrimento fluido al documento*/
-}
+
 body {
     font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Tahoma, Arial, Verdana, sans-serif;  /*font-family specifica il font, e inserisco vari font in questo modo siamo sicuri che almeno uno il browser lo legge */
 
@@ -147,7 +145,6 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
 
 .card {  /* stile delle card*/
     background: rgba(255, 255, 255,0.5); /*colore bianco con opacità (l'ultimo numero può andare da 0.0 cioè completamente trasparente a 1 che è completamente opaco)*/
-    -webkit-backdrop-filter: blur(5px); /*serve a farlo funzionare correttamente nei browser (chrome, safari). Stessa cosa della riga successiva (WEBKIT-> per Safari, quindi chi ha Mac o iPhone)*/
     backdrop-filter: blur(5px);  /*applica un effetto grafico all'area dietro un elemento (BLUR-> sfocatura)*/
     border: 5px solid rgba(255, 255, 255, 0.2); /*stile dei bordi (larghezza-stile-colore)*/
     border-radius: 12px; /*arrotonda gli angoli della card*/
@@ -220,3 +217,176 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     border: none; /* rimuove il bordo predefinito dei bottoni HTML*/
 }
 
+/*stile per Avvia Navigatore */
+.nav-btn { /*selettore di classe (link esterno)*/
+    background: rgba(255, 255, 255, 0.4); /*sfondo bianco con opacità 0.4 quindi quasi trasparente*/
+    backdrop-filter: blur(5px); /*applica un effetto grafico all'area dietro un elemento, in questo caso sfoca ciò che sta sotto il bottone*/
+    border: 1px solid white; /*larghezza del bordo, stile cioè in questo caso una linea e colore*/
+    color: #000; /*testo nero*/
+}
+.nav-btn:hover { /*hover-> quando passa il mouse sopra*/
+    background: rgba(255, 255, 255, 0.7); /*sfondo bianco con opacità, quindi
+                                           l'opacità dello sfondo aumenta quando si passa sopra con il mouse*/
+}
+
+/*stile per Mostra Mappa */
+.map-btn { /*selettore di classe*/
+    background-color: #1E90FF;
+    color: #ffffff; /*colore del testo*/
+}
+.map-btn:hover { /*.map-btn è il selettore di classe*/ /*:hover è la pseudo-classe che si attiva solo quando passa il mouse*/
+    background-color: #00BFFF; /*cambia colore, diventa azzurro piu chiaro, quando passa il mouse*/
+}
+
+/*stile per Recensioni */
+.review-btn { /*selettore di classe*/
+    background-color: #FF0000;
+    color: #ffffff; /*colore del testo, quindi della scritta "Recensioni"*/
+}
+.review-btn:hover { /*selettore di classe con la pseudo-classe che si attiva quando passa il mouse*/
+    background-color: #FF6347; /*cambia il colore quando passa il mouse*/
+}
+
+
+.no-results { /*selettore di classe e corrisponde alla scritta "Nessuna convenzione trovata"
+                                      quando cerco una convenzione nella barra di ricerca e non c'è*/
+    font-style: italic; /*corsivo*/
+    color: #000000; /*colore della scritta*/
+    font-size: 1.5rem; /*grandezza della scritta*/
+    text-align: center; /*allinea il testo al centro*/
+    background: rgba(255, 255, 255, 0.6); /*sfondo del riquadro*/
+    border-radius: 12px; /*arrotonda gli angoli del riquadro*/
+    padding: 20px; /*crea lo spazio tra il contenuto, quindi il testo, e i bordi del riquadro*/
+}
+
+
+footer {
+    text-align: center;  /* questa proprietà allinea orizzontalmente il  contenuto testuale al centro */
+    padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo */
+    margin-top: 3rem; /* aggiungo margine superiore in modo da separare l'elemento da ciò che lo precede */
+    background-color: rgba(0,0,0,0.1); /* imposto il colore di sfondo che è un nero molto trasparente in formato RGBA. Il quarto valore rappresenta l'opacità*/
+    color: #f0f0f0; /* imposto il colore del testo */
+    font-size: 0.9rem; /* imposto la grandezza del font */
+    border-top: 1px solid rgba(255, 255, 255, 0.18); /*  imposto  il bordo superiore di 1 pixel, solido e semitrasparente */
+}
+.modal-backdrop {
+    display: none;  /* nascondo l'elemento di  default, in modo che risulti invisibile finchè il modal non viene attivato */
+    position: fixed; /* imposto l'elemento in una posizione fissa, in questo modo che rimane ancorato alla viewport anche durante lo scroll. */
+    z-index: 1000; /* posiziono  il modal sopra gli altri elementi della pagina*/
+    padding-top: 100px; /*aggiungo spazio tra il bordo superiore dell'elemento e il suo contenuto */
+    top: 0; /* sposto l'elemento in verticale dall'alto */
+    left: 0; /* sposto l'elemento in orizzonatale da sinistra  */
+    width: 100%; /* imposto la lareghezza*/
+    height: 100%; /* imposto l'altezza*/
+    overflow: auto; /* aggiungo una barra di scorrimento  se il contenuto è troppo grande */
+    background: rgba(0, 0, 0, 0.35); /* imposto il colore dello sfondo dell'elemento */
+    backdrop-filter: blur(10px);     /* con questa funzione applico il blur ad un elemento  */
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.85);  /*imposto uno sfondo  semi-trasparente,  in combinazione con gli elementi successivi ottengo un effetto vetro  */
+    backdrop-filter: blur(15px); /*  imposto la sfocatura agli elementi allo sfondo retrostante al modale */
+    color: #1d1d1f; /* imposto il colore del testo */
+    padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo*/
+    border-radius: 12px; /* arrotondo i bordi dell'elemento */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* con questa proprietà applico  ombre all'elemento */
+    margin: 15% auto;  /* imposto il margine superiore e inferiorre al 15%, auto fa sì che il browser calcoli automaticamente lo spazio orizzontale, centrando l’elemento rispetto al contenitore.*/
+    width: 90%; /* imposto la larghezza */
+    max-width: 600px; /* definisco la larghezza massima dell'elemento */
+    box-sizing: border-box; /* il padding e il bordo sono inclusi nel calcolo della larghezza dell'elemento */
+    max-height: 80vh; /* imposto l'altezza massima */
+    overflow-y: auto; /*  il contenuto supera i bordi superiore/inferiore, aggiunge una barra di scorrimento */
+    position: relative; /* l'elemento viene posizionato rispetto alla sua poszione normale nel flusso */
+}
+
+.close {
+    color: #aaaaaa;
+    float: right; /* specifico come un elemento si deve muovere all'interno del testo */
+    font-size: 28px; /* imposto la dimensione del carattere */
+    font-weight: bold; /* imposto lo spessore del carattere */
+}
+
+.close:hover, /* utilizzo la pseudoclasse hover in modo da selezionare gli elementi quando il mouse passa sopra  */
+.close:focus {  /* uso questa pseudo classe per selezionare l'elemento e definire lo stile dell'elemento su cui viene attivato il focus. */
+    color: #000; /* cambio il colore del testo in nero quando è attivo hover o focus */
+    text-decoration: none; /* rimuovo eventuali decorazioni del testo come ad esempio le decorazioni  */
+    cursor: pointer; /* cambio il cursore in "mano" per indicare che è cliccabile */
+}
+
+#mapid {
+    width: 100%; /*imposto la larghezza */
+    height: 400px; /* imposto l'altezza  */
+    margin-top: 1rem; /*  aggiungo margine superiore in modo da separare l'elemento da ciò che lo precede  */
+    border-radius: 10px; /* arrotondo i bordi dell'elemento*/
+    border: 1px solid #f0f0f0; /* definisco il bordo dell'elemento */
+}
+
+
+.modal-content h2 {
+    color: #E63946; /* imposto il colore del testo  */
+    margin-bottom: 1.5rem; /* imposto il margine inferiore dell'elemento  */
+}
+
+
+#review-form textarea { /* descendent combinator */
+    width: 100%; /* imposto la larghezza */
+    min-height: 80px; /* imposto l'altezza minima */
+    padding: 12px; /* applico lo spazio tra il contenuto e il bordo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;; /* applico i font*/
+    font-size: 1rem; /* stabilisco la grandezza del font  */
+    border: 1px solid #dcdcdc; /*  applico un bordo solido con la dimensione di 1 px */
+    border-radius: 10px; /* arrotondo i bordi dell'elemento */
+    margin-bottom: 1rem; /* applico il margine inferiore  */
+    background-color: #f0f0f0; /* imposto il colore dello sfondo dell'elemento*/
+}
+
+#review-form textarea:focus {   /* uso questa pseudoclasse per selezionare e definire lo stile quando  sul textarea viene attivato il focus*/
+    outline: 2px solid #E63946; /* imposto il contorno della textarea di colore rosso  */
+}
+
+#review-form button {
+    background-color: #E63946; /* imposto il colore dello sfondo */
+    color: white; /* imposto come bianco il colore del testo */
+    font-weight: 600; /* stabilisco lo spessore dei caratteri */
+    padding: 12px; /* imposto la distanza tra il contenuto e il bordo dell'elemento */
+    border: none; /* stabilisco che non c'è nessun bordo */
+    border-radius: 8px; /* arrotondo i bordi dell'elemento */
+    cursor: pointer;  /*  imposto il cursore a forma di mano per indicare che è cliccabile   */
+    font-size: 1rem; /* stabilisco la grandezza del font */
+}
+
+.leaflet-container {
+    z-index: 1; /* posiziono la mappa sopra gli altri elementi */
+}
+
+
+/*stelle delle recensioni*/
+.star-rating-input span { /*definisco lo stile di ogni SINGOLA stella, in quanto lo span rappresenta una singola stella*/
+    font-size: 4rem; /*grandezza stelle*/
+    color: #b3b3b3; /*tonalità di grigio per le stelle vuote*/
+    cursor: pointer; /*esce il cursore a manina se passo sulle stelle così da capire che sono cliccabili (da freccia a manina)*/
+}
+.star-rating-input span:hover { /*selettore di classe con la pseudo-classe (:hover) che si attiva quando passa il mouse
+                                /*quando passa il mouse sulla singola stella cambia colore*/
+    color: #FFD700; /*la stella da grigia diventa gialla*/
+}
+
+.star-rating-input span.selected { /*prendo le stelle(span) dentro il contenitore delle recensioni
+                                   ma solo quelle che hanno la classe 'selected' (cioè quelle cliccate)*/
+    color: #FFD700; /*le stelle diventano e restano gialle*/
+
+    /*quindi prima (riga 367) solo al passaggio del mouse diventavano gialle
+      mentre adesso RESTANO gialle*/
+}
+
+/*contenitore delle stelle visualizzate nei commenti*/
+.star-rating-display { /*selettore di classe*/
+    font-size: 1rem; /*grandezza delle stelle di una recensione fatta*/
+    margin-bottom: 0.5rem; /*spazio inferiore alle stelle, cioè tra le stelle selezionate e la recensione sottostante*/
+}
+.star-rating-display .star-filled {
+    color: #FFD700; /*colora di giallo le stelle che rappresentano il voto dato*/
+}
+.star-rating-display .star-empty {
+    color: #b3b3b3; /*colora di grigio le stelle mancanti per arrivare a 5, quindi quelle non selezionate*/
+}
