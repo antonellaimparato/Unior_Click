@@ -357,4 +357,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // per evitare bug grafici forzo tramite il codice per far restare le finestre modali invisibili all'avvio.
     reviewModal.style.display = "none";
     mapModal.style.display = "none";
-}); // chiudo l'ultima parentesi grafa che è legata al DOM
+}); // chiudo l'ultima parentesi graffa che è legata al DOM
