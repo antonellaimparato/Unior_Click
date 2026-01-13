@@ -1,10 +1,9 @@
 {
-  "name": "unior_click",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "private": true
+  "name": "UniorClick App",
+  "short_name": "UniorClick",
+  "lang": "it-IT",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white"
 }

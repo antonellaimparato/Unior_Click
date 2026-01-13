@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho creato il file del Service Worker (sw.js)" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +19,12 @@
     &quot;assignee&quot;: &quot;antonellaimparato&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/antonellaimparato/Unior_Click.git",
-    "accountId": "0f365b0c-97c1-4f1d-ae49-69871e4390ad"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/antonellaimparato/Unior_Click.git&quot;,
+    &quot;accountId&quot;: &quot;a62e45ea-6031-4746-bb65-2e5d058dedff&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -58,7 +58,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
       </set>
     </attachedChunks>
   </component>
@@ -79,10 +79,6 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
-      <workItem from="1768165468483" duration="369000" />
-      <workItem from="1768165865586" duration="824000" />
-      <workItem from="1768304274751" duration="2165000" />
-      <workItem from="1768331372689" duration="477000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -180,39 +176,7 @@
       <option name="project" value="LOCAL" />
       <updated>1767911658757</updated>
     </task>
-    <task id="LOCAL-00013" summary=".">
-      <option name="closed" value="true" />
-      <created>1768131086492</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1768131086492</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa.">
-      <option name="closed" value="true" />
-      <created>1768144801747</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1768144801747</updated>
-    </task>
-    <task id="LOCAL-00015" summary=".">
-      <option name="closed" value="true" />
-      <created>1768307167755</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1768307167755</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Ho creato il file del Service Worker (sw.js)">
-      <option name="closed" value="true" />
-      <created>1768331671901</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1768331671901</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,9 +197,6 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
-    <MESSAGE value="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa." />
-    <MESSAGE value="." />
-    <MESSAGE value="Ho creato il file del Service Worker (sw.js)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho creato il file del Service Worker (sw.js)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
   </component>
 </project>
