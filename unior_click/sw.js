@@ -1,4 +1,4 @@
-//Definisco il nome dell'applicazione //
+// Definisco il nome dell'applicazione //
 let cacheName = 'unior_click';
 
 //Definisco la lista dei file che devono essere salvati nella cache//
