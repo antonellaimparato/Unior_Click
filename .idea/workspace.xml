@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)">
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/js/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/antonellaimparato/Unior_Click.git&quot;,
-    &quot;accountId&quot;: &quot;a62e45ea-6031-4746-bb65-2e5d058dedff&quot;
+    &quot;accountId&quot;: &quot;61ad3f6b-496a-4b36-a267-69d0214a171b&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -54,14 +54,14 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
@@ -82,6 +82,16 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
+      <workItem from="1768209621990" duration="72000" />
+      <workItem from="1768218778833" duration="127000" />
+      <workItem from="1768219524426" duration="16000" />
+      <workItem from="1768231556746" duration="36000" />
+      <workItem from="1768231611267" duration="7657000" />
+      <workItem from="1768239305455" duration="427000" />
+      <workItem from="1768239737935" duration="3000" />
+      <workItem from="1768295985116" duration="131000" />
+      <workItem from="1768296767275" duration="453000" />
+      <workItem from="1768312099180" duration="5284000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
