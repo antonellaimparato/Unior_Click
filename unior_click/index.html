@@ -10,31 +10,32 @@
     <link rel="stylesheet" href="css/style.css"> <!-- collego il file style.css, presente nella cartella CSS, al file index.html-->
     <link crossorigin="" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" rel="stylesheet"/> <!-- inserisco il file CSS di Leaflet -->
-
 </head>
-<body>
 
-<header id="page-top"> <!-- intestazione della pagina, rivedere perchè in css e java non indicaqto con id -->
-    <!-- id identifica un unico elemento, questo elemento e viene utilizzato per far riferimento ad una specifica dichiarazione di stile in css e per manipolare in jqava queòllo specifico elemento -->
-    <a href="https://www.unior.it/it" target="_blank"> <!-- INSERISCO UN IMMAAGINE COME LINK -->
-        <img src="images/logo.jpeg" alt="Logo UNIORICLICK" height="1280" width="1280" id="logo"> <!-- introduco immagine, DA CAPIRE MEGLIO SE POSSIAMO MANTENERE QUIESGTO ID LOGO O E' TROPPO SOSPETTO-->
+<body>
+<header id="page-top"> <!-- Intestazione della pagina che contiene il logo e l'intestazione. L'id identifica un unico elemento -->
+    <a href="https://www.unior.it/it" target="_blank"> <!-- Inserisco l'immagine come link. Con l'attributo target = "_blank" specifico che il link si debba aprire in un'altra pagina -->
+        <img src="images/logo.jpeg" alt="Logo Unior_Click" height="1280" width="1280" id="logo"> <!-- inserisco l'immagine-->
     </a>
-    <h1>Convenzioni Studenti</h1> <!-- elemento che introduce titolo -->
-</header> <!--chiusura header -->
+
+    <h1>Convenzioni Studenti</h1> <!-- definisco il titolo -->
+</header> <!--chiusura di questo elemento-->
 
 <main> <!--sezione principale della pagina -->
-    <form action="#" method="get" class="filters-container"> <!-- Inizio del form. action="#" significa che i dati non vengono inviati a un server (placeholder).
-             method="get" invia i dati come parametri nell'URL.
-             class="filters-container" serve per applicare stili CSS al contenitore dei filtri. -->
-        <div class="filter-item">  <!-- blocco di filtro per organizzare css -->
-            <label for="search-bar">Cerca:</label> <!-- Etichetta collegata all'input tramite l'attributo for="search-bar -->
-            <input type="search" id="search-bar" name="search-bar" placeholder="Nome, indirizzo, tipo..."> <!-- ampo di input di tipo "search".
-                 id="search-bar" lo collega al label, placeholder mostra un suggerimento di ciò che ci si aspetti si trovi all'interno -->
+    <form action="#" method="get" class="filters-container"> <!-- Apro il form dei filtri:
+    action="#" i dati non vengono inviati al server,
+    method="get" invia i dati come parametri nell'URL,
+     class="filters-container" classe per lo stile del contenitore dei filtri. -->
+        <div class="filter-item">  <!-- blocco che raggruppa gli elementi del filtro  -->
+            <label for="search-bar">Cerca:</label> <!-- Etichetta collegata all'input tramite l'attributo for="search-bar" -->
+            <input type="search" id="search-bar" name="search-bar" placeholder="Nome, indirizzo, tipo...">
+            <!-- Campo di input di tipo "search". L'attributo id="search-bar" lo collega a label.
+            L'attributo placeholder mostra un suggerimento su cosa inserire -->
         </div>
-        <div class="filter-item"> <!--blocco di filtro -->
-            <label for="sede-filter">Mostra vicine a:</label> <!-- etichetta  legata al menù a tendina -->
-            <select id="sede-filter" name="sede-filter"> <!--  menù a tendina, id = sede-filter lo collega al label -->
-                <option value="page-top">Tutte le sedi</option><!-- aqgiungo le varie opzioni del menu a tendina -->
+        <div class="filter-item"> <!--blocco che raggruppa gli elementi del filtro -->
+            <label for="sede-filter">Mostra vicine a:</label> <!-- Etichetta legata al menù a tendina -->
+            <select id="sede-filter" name="sede-filter"> <!--  Utilizzo questo elemento per creare un menu a tendina, l'attributo id = sede-filter lo collega al label -->
+                <option value="page-top">Tutte le sedi</option><!-- Aggiungo le varie opzioni del menu a tendina -->
                 <option value="mediterraneo">Palazzo del Mediterraneo</option>
                 <option value="giusso">Palazzo Giusso</option>
                 <option value="porta-coeli">Palazzo Santa Maria Porta Coeli</option>
@@ -44,24 +45,24 @@
 
     </form>
 
-    <div id="card-container"> <!--blocco di filtro -->
+    <div id="card-container"> <!--blocco che raggruppa gli elementi delle card-->
     </div>
 </main>
 
 <footer>
-    <p>  Martina Graziuso - Antonella Imparato -  Vasyl Pavlioglo </p> <!-- paragrafo -->
+    <p>  Martina Graziuso - Antonella Imparato - Vasyl Pavlioglo </p> <!-- paragrafo in cui inserisco il nome degli autori del progetto -->
 </footer>
 
-<button id="open-review-modal">Apri Recensioni</button> <!-- Apro un pop up, ovvero una finestra modale -->
+<button id="open-review-modal">Apri Recensioni</button> <!-- Bottone  che apre una finestra modale -->
 <div id="review-modal" class="modal-backdrop"> <!-- Il modale-->
-    <div class="modal-content"> <!-- Modal content -->
+    <div class="modal-content"> <!-- contenitore principale del modale -->
         <span class="close" >&times;</span> <!-- chiusura del modale -->
-        <h2 id="modal-title">Recensioni per...</h2> <!-- header -->
-        <div id="reviews-list-container"></div> <!-- lista recensioni -->
-        <form id="review-form" action="#" method="post"> <!-- apro form  per inviare una nuova recensione -->
+        <h2 id="modal-title">Recensioni per...</h2> <!-- titolo del modale -->
+        <div id="reviews-list-container"> </div> <!-- blocco che raggruppa la lista delle recensioni identificate tramite l'elemento id  -->
+        <form id="review-form" action="#" method="post"> <!-- apro form per inviare la recensione -->
             <h3>Lascia una recensione:</h3> <!-- sottotitolo -->
 
-            <div class="star-rating-input">  <!--contenitore per le recensione basate su stelle-->
+            <div class="star-rating-input">  <!-- blocco che raggruppa per le recensione basate su stelle-->
                 <span data-value="1">★</span> <!-- Ogni span rappresenta una stella che va cliccata -->
                 <span data-value="2">★</span> <!-- controllare questione di stella come simbolo testuale -->
                 <span data-value="3">★</span>
@@ -70,25 +71,27 @@
             </div>
 
             <label for="review-text">Scrivi la tua recensione:</label> <!-- Ho aggiunto un label collegato al campo di testo-->
-            <textarea id="review-text" placeholder="Scrivi qui il tuo commento..." required></textarea> <!-- Ho aggiunto una label collegata al campo di testo -->
-            <button type="submit">Invia Recensione</button> <!-- Ho aggiunto una label collegata al campo di testo -->
+            <textarea id="review-text" placeholder="Scrivi qui il tuo commento..." required></textarea> <!--  Campo di testo per inserire le recensioni. L'attributo placeholder mostra un suggerimento su cosa inserire-->
+            <button type="submit">Invia Recensione</button> <!-- Bottone per inviare la recensione -->
 
         </form>
     </div>
 </div>
-<button id="open-map-modal">Apri Mappa</button> <!-- apro un'altra finestra modale -->
-<div id="map-modal" class="modal-backdrop">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 id="map-modal-title">Mappa</h2>
-        <div id="mapid"></div>
+
+<button id="open-map-modal">Apri Mappa</button> <!--  Bottone che apre una finestra modale  -->
+<div id="map-modal" class="modal-backdrop"> <!-- modale   -->
+    <div class="modal-content"> <!-- contenitore principale della classe modale -->
+        <span class="close">&times;</span> <!-- chiusura del modale -->
+        <h2 id="map-modal-title">Mappa</h2> <!-- titolo modale -->
+        <div id="mapid"></div> <!-- blocco di testo che contiene l'attributo id che si riferisce alla mappa leaflet -->
     </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-        crossorigin="">
+        crossorigin=""> <!-- inserisco api leaflet per le mappe, includendolo in uno script per javascript -->
 
-</script> <!-- inserisco api leaflet per le mappe, includendolo in uno script per javascript -->
-<script src="js/functions.js"></script>
+</script>
+<script src="js/functions.js"></script>  <!-- ho collegato il file javascript che gestisce le funzionalità della pagina -->
+
 </body>
 </html>
