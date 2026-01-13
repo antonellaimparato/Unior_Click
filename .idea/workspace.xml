@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/sw.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
