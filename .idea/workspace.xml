@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/sw.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767911658757</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage">
+      <option name="closed" value="true" />
+      <created>1768319628059</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1768319628059</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +208,7 @@
     <MESSAGE value="aggiunto titolo" />
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
+    <MESSAGE value="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
   </component>
 </project>
