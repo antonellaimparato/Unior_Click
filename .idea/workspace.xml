@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa.">
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho creato il file del Service Worker (sw.js)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/sw.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768144801747</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Ho creato il file del Service Worker (sw.js)">
+      <option name="closed" value="true" />
+      <created>1768318119990</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1768318119990</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +228,7 @@
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <MESSAGE value="." />
     <MESSAGE value="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa." />
+    <MESSAGE value="Ho creato il file del Service Worker (sw.js)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho creato il file del Service Worker (sw.js)" />
   </component>
 </project>
