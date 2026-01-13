@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/unior_click/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/index.html" afterDir="false" />
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
@@ -81,6 +81,9 @@
       <workItem from="1767699733454" duration="386000" />
       <workItem from="1767700132300" duration="113000" />
       <workItem from="1767700251163" duration="731000" />
+      <workItem from="1768165468483" duration="369000" />
+      <workItem from="1768165865586" duration="824000" />
+      <workItem from="1768304274751" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -186,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768131086492</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa.">
+      <option name="closed" value="true" />
+      <created>1768144801747</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1768144801747</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +219,7 @@
     <MESSAGE value="ho aggiunto l'intestazione dell'html" />
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ho perfezionato la struttura HTML con i principali componenti dell’interfaccia&#10;Completata la struttura della homepage organizzandola in header, sezione principale e footer.&#10;Inseriti il form di ricerca con filtri per sede, il contenitore per le card delle convenzioni e le finestre modali per recensioni e mappa." />
   </component>
 </project>
