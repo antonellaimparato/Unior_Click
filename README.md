@@ -1,4 +1,5 @@
-# Unior_Click
+# Unior_Click di Martina Graziuso, Antonella Imparato, Vasyl Pavlioglo 
+
 *Unior Click: Your discounts, just one click away!*
 
 Unior click comes from a simple and powerful idea:  to transform L’ Orientale University  “Student Card”, which is often taken because it is free and then  forgotten, into a personal saving tool.
@@ -35,3 +36,23 @@ To reproduce the project from the GitHub repository:
 3.	Check that the files index.html, manifest.json, and sw.js are in the root folder, while scripts and styles are in their respective /js and /css folders.
 
 4.	Run the project through a local server (WebStorm does this automatically by clicking the browser icon) because the Service Worker will not register if you open the files directly from the folder path.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*Unior Click: I tuoi sconti a portata di click!*
+
+Unior Click nasce da un’idea semplice ma concreta: trasformare la "Card Student" dell'Università L'Orientale, che spesso viene ritirata perché è gratis ma va dimenticata, in uno strumento di risparmio quotidiano. Abbiamo creato una Progressive Web App (PWA) che rende tutte le convenzioni trasparenti e facili da consultare.
+
+Com’è fatta l’applicazione?
+
+Abbiamo diviso il lavoro in diversi blocchi che comunicano tra loro:
+•	L'interfaccia principale (index.html): Abbiamo impostato il viewport per far sì che il layout si adatti a ogni dispositivo, rendendo l'app leggibile ovunque. La pagina è organizzata con un header per il logo e il titolo, un main per i filtri di ricerca e delle finestre modali (pop-up) per mostrare mappe e recensioni.
+•	Lo stile e le animazioni (style.css): Abbiamo creato uno sfondo animato con sfumature di rosso. Per le card delle convenzioni abbiamo usato la proprietà backdrop-filter: blur per creare un effetto di sfocatura dello sfondo e una transizione che fa sollevare la card quando l'utente passa il mouse sopra.
+•	Il database e le funzioni (functions.js): Abbiamo simulato un archivio dei locali definendo un database costante tramite un array di oggetti. Ogni locale possiede un ID univoco, le coordinate per la mappa e tag specifici per il tipo di offerta. Le funzioni permettono di filtrare i risultati in modalità “Case Insensitive” (indipendentemente da maiuscole o minuscole) e di salvare le recensioni nel LocalStorage del browser. In questo modo, i commenti rimangono salvati nel dispositivo dell’utente anche chiudendo la pagina.
+•	Mappe Interattive: Usando l'API Leaflet, trasformiamo le coordinate in un marcatore visuale (in un puntino rosso) sulla mappa. Abbiamo aggiunto anche un tasto per avviare direttamente la navigazione di Google Maps verso l'indirizzo della convenzione.
+
+Il progetto è una PWA che  può funzionare anche senza internet:
+•	Il Manifest (manifest.json): Permette di installare l'app sulla home del telefono con la visualizzazione standalone, senza la barra dell'URL.
+•	Il Service Worker (sw.js): Salva nella cache i file principali durante l'installazione e fornisce i contenuti memorizzati quando si è offline.
+•	Registrazione (main.js): Controlla se il browser supporta le PWA e registra il Service Worker usando la direttiva 'use strict' per evitare errori.
