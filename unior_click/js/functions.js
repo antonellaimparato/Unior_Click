@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentStarRating = 0; // questa variabile mi serve per ricordare a quante stelle ha cliccato l'utente.
 
-    // Questa funzione prende un oggetto "convenzione" ovvero i suoi dati e restituisce una stringa HTML ovvero la grafica.
+    // Questa funzione prende l'oggetto "convenzione" ovvero i suoi dati e restituisce una stringa HTML ovvero la grafica.
     function createCardHTML(convenzione) {
         // Qui creo un link per Google Maps
         const navUrl = `https://maps.google.com/maps?daddr=${convenzione.lat},${convenzione.lng}`;
         /* Utilizzo i backtick introdotto nel 2015 che mi permettono di scrivere stringhe su più righe,
-            inserire variabili dinamiche direttamente ne testo usando ${variabile} viene chiamata "interpolazione",
+            inserire variabili dinamiche direttamente nel testo usando ${variabile} viene chiamata "interpolazione",
             e mi permette di usare liberamente "" per le classi HTMl senza dover fare l'escape ovvero non devo mettere simboli strani davanti alle virgolette dell'HTML
             ad esempio \ per evitare che il codice porti errori.
          */
