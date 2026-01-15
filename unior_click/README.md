@@ -24,8 +24,8 @@ Our project is a PWA that can work even without an internet connection:
 -	Commit & Push:  Every time we completed a feature (such as the review stars or the venue filter), we saved and uploaded the code to the repository to make it available to our teammates.
      This allowed us to have a clean final  code, where each  file is correctly  linked to the others, effectively combining separately written code into a single project.
 
-Instructions for Replication
-To reproduce the project from the GitHub repository:
+ Instructions for Replication
+ To reproduce the project from the GitHub repository:
 1.	Clone: Download the repository to your local PC (e.g., via WebStorm or the git clone command).
 
 2.	Always pull to ensure you have the latest version of the code merged by the team.
