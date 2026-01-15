@@ -47,12 +47,12 @@ Unior Click nasce da un’idea semplice ma concreta: trasformare la "Card Studen
 Com’è fatta l’applicazione?
 
 Abbiamo diviso il lavoro in diversi blocchi che comunicano tra loro:
-•	L'interfaccia principale (index.html): Abbiamo impostato il viewport per far sì che il layout si adatti a ogni dispositivo, rendendo l'app leggibile ovunque. La pagina è organizzata con un header per il logo e il titolo, un main per i filtri di ricerca e delle finestre modali (pop-up) per mostrare mappe e recensioni.
-•	Lo stile e le animazioni (style.css): Abbiamo creato uno sfondo animato con sfumature di rosso. Per le card delle convenzioni abbiamo usato la proprietà backdrop-filter: blur per creare un effetto di sfocatura dello sfondo e una transizione che fa sollevare la card quando l'utente passa il mouse sopra.
-•	Il database e le funzioni (functions.js): Abbiamo simulato un archivio dei locali definendo un database costante tramite un array di oggetti. Ogni locale possiede un ID univoco, le coordinate per la mappa e tag specifici per il tipo di offerta. Le funzioni permettono di filtrare i risultati in modalità “Case Insensitive” (indipendentemente da maiuscole o minuscole) e di salvare le recensioni nel LocalStorage del browser. In questo modo, i commenti rimangono salvati nel dispositivo dell’utente anche chiudendo la pagina.
-•	Mappe Interattive: Usando l'API Leaflet, trasformiamo le coordinate in un marcatore visuale (in un puntino rosso) sulla mappa. Abbiamo aggiunto anche un tasto per avviare direttamente la navigazione di Google Maps verso l'indirizzo della convenzione.
+-	L'interfaccia principale (index.html): Abbiamo impostato il viewport per far sì che il layout si adatti a ogni dispositivo, rendendo l'app leggibile ovunque. La pagina è organizzata con un header per il logo e il titolo, un main per i filtri di ricerca e delle finestre modali (pop-up) per mostrare mappe e recensioni.
+-	Lo stile e le animazioni (style.css): Abbiamo creato uno sfondo animato con sfumature di rosso. Per le card delle convenzioni abbiamo usato la proprietà backdrop-filter: blur per creare un effetto di sfocatura dello sfondo e una transizione che fa sollevare la card quando l'utente passa il mouse sopra.
+-	Il database e le funzioni (functions.js): Abbiamo simulato un archivio dei locali definendo un database costante tramite un array di oggetti. Ogni locale possiede un ID univoco, le coordinate per la mappa e tag specifici per il tipo di offerta. Le funzioni permettono di filtrare i risultati in modalità “Case Insensitive” (indipendentemente da maiuscole o minuscole) e di salvare le recensioni nel LocalStorage del browser. In questo modo, i commenti rimangono salvati nel dispositivo dell’utente anche chiudendo la pagina.
+-	Mappe Interattive: Usando l'API Leaflet, trasformiamo le coordinate in un marcatore visuale (in un puntino rosso) sulla mappa. Abbiamo aggiunto anche un tasto per avviare direttamente la navigazione di Google Maps verso l'indirizzo della convenzione.
 
 Il progetto è una PWA che  può funzionare anche senza internet:
-•	Il Manifest (manifest.json): Permette di installare l'app sulla home del telefono con la visualizzazione standalone, senza la barra dell'URL.
-•	Il Service Worker (sw.js): Salva nella cache i file principali durante l'installazione e fornisce i contenuti memorizzati quando si è offline.
-•	Registrazione (main.js): Controlla se il browser supporta le PWA e registra il Service Worker usando la direttiva 'use strict' per evitare errori.
+-	Il Manifest (manifest.json): Permette di installare l'app sulla home del telefono con la visualizzazione standalone, senza la barra dell'URL.
+-	Il Service Worker (sw.js): Salva nella cache i file principali durante l'installazione e fornisce i contenuti memorizzati quando si è offline.
+-	Registrazione (main.js): Controlla se il browser supporta le PWA e registra il Service Worker usando la direttiva 'use strict' per evitare errori.
