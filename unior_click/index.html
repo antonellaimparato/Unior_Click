@@ -8,7 +8,7 @@
      tag imposto il viewport della pagina, così che il layout della pagina si adatti alle
      dimensioni dello schermo così che sia leggibile su tutte le tipologie di dispositivo -->
     <link rel="stylesheet" href="css/style.css"> <!-- collego il file style.css, presente nella cartella CSS, al file index.html-->
-    <link rel="manifest" href="manifest.json"
+    <link rel="manifest" href="manifest.json">
     <link crossorigin="" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" rel="stylesheet"/> <!-- inserisco il file CSS di Leaflet -->
 
@@ -55,7 +55,7 @@
     <p>  Martina Graziuso - Antonella Imparato - Vasyl Pavlioglo </p> <!-- paragrafo in cui inserisco il nome degli autori del progetto -->
 </footer>
 
-<button id="open-review-modal">Apri Recensioni</button> <!-- Bottone  che apre una finestra modale -->
+<button id="open-review-modal"></button> <!-- Bottone  che apre una finestra modale -->
 <div id="review-modal" class="modal-backdrop"> <!-- Il modale-->
     <div class="modal-content"> <!-- contenitore principale del modale -->
         <span class="close" >&times;</span> <!-- chiusura del modale -->
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<button id="open-map-modal">Apri Mappa</button> <!--  Bottone che apre una finestra modale  -->
+<button id="open-map-modal"></button> <!--  Bottone che apre una finestra modale  -->
 <div id="map-modal" class="modal-backdrop"> <!-- modale   -->
     <div class="modal-content"> <!-- contenitore principale della classe modale -->
         <span class="close">&times;</span> <!-- chiusura del modale -->
@@ -93,7 +93,8 @@
         crossorigin=""> <!-- inserisco api leaflet per le mappe, includendolo in uno script per javascript -->
 
 </script>
-<script src="js/functions.js"></script>  <!-- ho collegato il file javascript che gestisce le funzionalità della pagina -->
+<script src="js/functions.js"></script>
+<script src="js/main.js"></script>  <!-- ho collegato il file javascript che registra il service worker. -->
 
 </body>
 </html>
