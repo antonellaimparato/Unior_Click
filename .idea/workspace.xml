@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho aggiunto la prima parte della versione italiana del file README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unior_click/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/sw.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +23,12 @@
     &quot;assignee&quot;: &quot;antonellaimparato&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/antonellaimparato/Unior_Click.git&quot;,
-    &quot;accountId&quot;: &quot;61ad3f6b-496a-4b36-a267-69d0214a171b&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/antonellaimparato/Unior_Click.git",
+    "accountId": "0f365b0c-97c1-4f1d-ae49-69871e4390ad"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -62,7 +62,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
       </set>
     </attachedChunks>
   </component>
@@ -87,6 +87,7 @@
       <workItem from="1768380558138" duration="54000" />
       <workItem from="1768387612476" duration="897000" />
       <workItem from="1768469485753" duration="112000" />
+      <workItem from="1768598303451" duration="4487000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />

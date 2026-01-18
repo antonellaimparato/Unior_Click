@@ -1,4 +1,4 @@
-* {   /*Seleziona (universal selector(*)) tutti gli elementi HTML nella pagina.La regola CSS seguente avrà effetto su ogni elemento HTML della pagina */
+* {   /*Seleziona (universal selector(*)) TUTTI GLI ELEMENTI HTML nella pagina.La regola CSS seguente avrà effetto su ogni elemento HTML della pagina */
     box-sizing: border-box;  /*La box-sizing proprietà CSS definisce come calcolare la larghezza e l'altezza di un elemento. Se si imposta box-sizing: border-box; un elemento, il padding e il bordo vengono inclusi nel calcolo della larghezza e dell'altezza, e quindi è la scelta migliore*/
     margin: 0;   /*Imposta il margine esterno a zero per tutti i lati.*/
     padding: 0;  /*Imposta il padding interno a zero per tutti i lati.*/
@@ -35,7 +35,8 @@ header { /*selettore di elemento che individua e applica uno stile all'elemento 
 }
 
 /*overlay scuro per la leggibilità */
-header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima di header; Questo elemento funge da strato colorato sopra l'immagine di sfondo.*/
+header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima di header;
+                        Questo elemento funge da strato colorato sopra l'immagine di sfondo.*/
     content: "";  /*specificare SEMPRE il contenuto da inserire; in questo caso stringa vuota*/
     position: absolute;   /*è posizionato rispetto all'antenato posizionato più vicino (con posizione diversa da statica), quindi questo overlay si posizionerà rispetto all'header*/
     top: 0;
@@ -46,7 +47,7 @@ header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima
     z-index: 1;  /*indica l'ordine di impilamento degli elementi selezionati, in questo caso lo sfondo è a livello 0 e l'overlay a livello 1*/
 }
 
-#logo {   /*selettore ID che utilizza l'attributo id di un elemento HTML per selezionare un elemento specifico-> elemento UNIVOCO dell'intera pagina*/
+#logo {  /*selettore ID che utilizza l'attributo id di un elemento HTML per selezionare un elemento specifico-> elemento UNIVOCO dell'intera pagina*/
     width: 120px; /*imposta la larghezza*/
     height: 120px; /*imposta l'altezza*/
     border-radius: 50%; /*arrotonda gli angoli*/
@@ -57,7 +58,7 @@ header::before {     /* :: indicano uno pseudo elemento*/ /*pseudo elmento prima
 
 }
 
-header h1 {
+header h1 { /*TITOLO "CONVENZIONI STUDENTI*/
     font-family: 'Georgia', serif;   /* Font personalizzato */
     color: #ffffff;  /*colore esadecimale (#RRGGBB)*/
     font-size: 1.8rem;
@@ -67,7 +68,7 @@ header h1 {
 }
 
 /*filtri e parte centrale  */
-main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine */
+main {  /*inizia qui tutto il BLOCCO IN GENERALE, da sotto il logo e l'immagine */
     max-width: 1200px; /*definisce la larghezza massima di un elemento*/
     margin: 2rem auto; /* 2rem-> superiore e inferiore; auto-> destra e sinistra, centra automaticamente l'elemento */
     padding: 0 1rem; /* (spazio tra il contenuto e il bordo) 0->superiore e inferiore; 1rem-> destra e sinistra.La spaziatura laterale (1rem) serve a evitare che il contenuto si attacchi ai margini dello schermo*/
@@ -80,11 +81,13 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     gap: 2rem;  /* Proprietà abbreviata per row-gap e column-gap (spazio tra righe e spazio tra colonne) */
     margin-bottom: 2rem; /*margine inferiore*/
 }
-.filter-item { /* selettore di classe (.) */
+.filter-item { /* selettore di classe (.)
+               Si riferisce al BLOCCO "CERCA: (e il menu a tendina/rettangolo sotto) e MOSTRA VICINE A: (e menu a tendina sotto)" */
     display: flex;   /*trasforma l'elemento in un contenitore flessibile a livello di BLOCCO (l'altra alternativa può essere inline-flex)*/
-    flex-direction: column; /*specifica la direzione di visualizzazione degli elementi flessibili nel contenitore flessibile*/
+    flex-direction: column; /*specifica la direzione di visualizzazione degli elementi flessibili nel contenitore flessibile
+                             il menu a tendina anzichè al lato delle scritte sta sotto*/
 }
-.filter-item label {  /* selettore di classe -> si riferisce al menu a tendina, cioè alle scritte "cerca" e "mostra vicine a"*/
+.filter-item label {  /* selettore di classe -> si riferisce al MENU A TENDINA, cioè alle scritte "cerca" e "mostra vicine a"*/
     font-weight: 700;  /*spessore dei caratteri*/
     font-size: 1rem;
     margin-bottom: 0.5rem; /* margine inferiore*/
@@ -92,7 +95,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     text-shadow: 3px 3px 10px rgba(0,0,0,0.2); /*aggiunge ombra al testo. Ombra orizzontale e verticale, con effetto colore e sfocatura (in rgba lo 0.2 rende piu trasparente/sottile il nero)*/
 }
 
-/*si riferisce ai "rettangoli" sotto cerca e mostra vicino a*/
+/*si riferisce ai "RETTANGOLI" sotto cerca e mostra vicino a*/
 #search-bar, /*selettore ID*/
 #sede-filter {
     width: 100%; /*larghezza*/
@@ -120,7 +123,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
 }
 
 /*contenuto del card e il suo stile */
-.sede-heading {   /*selettore di classe -> sono le scritte delle varie sedi sopra le convenzioni*/
+.sede-heading {   /*selettore di classe -> sono le SCRITTE DELLE VARIE SEDI sopra le convenzioni*/
     font-size: 1.8rem;
     font-weight: 700; /*grassetto*/
     color: #ffffff;   /*codice esadecimale*/
@@ -130,7 +133,8 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     margin-top: 2.0rem; /*margine superiore*/
     margin-bottom: 1rem; /*margine inferiore*/
 }
-#card-container { /*selettore ID, cioè seleziona l'UNICO elemento id=card-container*/
+#card-container { /*selettore ID, cioè seleziona l'UNICO elemento id=card-container
+                  BLOCCO CHE RAGGRUPPA GLI ELEMENTI DELLE CARD*/
     display: block; /*"display" : proprietà che ci dice come visualizzare gli elementi HTML.
                      "block" : questo elemento viene trattato come un blocco (Un elemento a livello di blocco inizia SEMPRE su una nuova riga e occupa l'intera larghezza disponibile) */
 }
@@ -164,23 +168,23 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                                                      3px : sfocatura del colore
                                                      rgba(0,0,0,0.08) : colore nero con opacità (0.08 -> quasi invisibile l'ombra */
 }
-.card h3 { /*Titolo della card (gran caffè, copy smile...)*/
+.card h3 { /*TITOLO della card (gran caffè, copy smile...)*/
     color: #E63946;
     margin-bottom: 0.5rem; /*imposta il margine inferiore dell'elemento*/
     font-size: 1.5rem;
     font-weight: 800; /*imposta lo spessore dei caratteri*/
 }
-.card p { /*paragrafo card (testo generico, cioè l'indirizzo e cosa comprende lo sconto*/
+.card p { /*PARAGRAFO card (testo generico, cioè l'indirizzo e cosa comprende lo sconto*/
     font-size: 1rem;
     margin-bottom: 0.25rem; /*margine inferiore*/
     color: #000000;
 }
-.card .indirizzo { /*indirizzo all'interno della card*/
+.card .indirizzo { /*INDIRIZZO all'interno della card*/
     font-style: italic; /*corsivo*/
     color:#000000;
     margin-bottom: 1rem; /*margine inferiore*/
 }
-.card .offerta { /*si riferisce al testo in cui si spiega cosa comprende lo sconto*/
+.card .offerta { /*SPIEGAZIONE: si riferisce al testo in cui si spiega cosa comprende lo sconto*/
     font-weight: 500; /*spessore*/
     color: #000000;
     margin-bottom: 1rem; /*margine inferiore*/
@@ -189,7 +193,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                    così da avere i bottoni sottostanti allineati*/
 }
 
-/*come i bottoni sono disposti sulla card */
+/*come i BOTTONI sono disposti SULLA CARD */
 .card-actions {
     display: flex; /*DISPLAY: specifica il comportamento di visualizzazione di un elemento
                      FLEX: trasforma l'elemento in un contenitore flessibile a livello di blocco*/
@@ -217,7 +221,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     border: none; /* rimuove il bordo predefinito dei bottoni HTML*/
 }
 
-/*stile per Avvia Navigatore */
+/*stile per AVVIA NAVIGATORE */
 .nav-btn { /*selettore di classe (link esterno)*/
     background: rgba(255, 255, 255, 0.4); /*sfondo bianco con opacità 0.4 quindi quasi trasparente*/
     backdrop-filter: blur(5px); /*applica un effetto grafico all'area dietro un elemento, in questo caso sfoca ciò che sta sotto il bottone*/
@@ -229,7 +233,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
                                            l'opacità dello sfondo aumenta quando si passa sopra con il mouse*/
 }
 
-/*stile per Mostra Mappa */
+/*stile per MOSTRA MAPPA */
 .map-btn { /*selettore di classe*/
     background-color: #1E90FF;
     color: #ffffff; /*colore del testo*/
@@ -238,7 +242,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
     background-color: #00BFFF; /*cambia colore, diventa azzurro piu chiaro, quando passa il mouse*/
 }
 
-/*stile per Recensioni */
+/*stile per RECENSIONI */
 .review-btn { /*selettore di classe*/
     background-color: #FF0000;
     color: #ffffff; /*colore del testo, quindi della scritta "Recensioni"*/
@@ -248,7 +252,7 @@ main {  /*inizia qui tutto il blocco in generale, da sotto il logo e l'immagine 
 }
 
 
-.no-results { /*selettore di classe e corrisponde alla scritta "Nessuna convenzione trovata"
+.no-results { /*selettore di classe e corrisponde alla scritta "NESSUNA CONVENZIONE TROVATA"
                                       quando cerco una convenzione nella barra di ricerca e non c'è*/
     font-style: italic; /*corsivo*/
     color: #000000; /*colore della scritta*/
@@ -360,7 +364,7 @@ footer {
 }
 
 
-/*stelle delle recensioni*/
+/*STELLE DELLE RECENSIONI*/
 .star-rating-input span { /*definisco lo stile di ogni SINGOLA stella, in quanto lo span rappresenta una singola stella*/
     font-size: 4rem; /*grandezza stelle*/
     color: #b3b3b3; /*tonalità di grigio per le stelle vuote*/
