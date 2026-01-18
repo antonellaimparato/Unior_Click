@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Ho aggiunto la prima parte della versione italiana del file README.md">
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unior_click/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/index.html" afterDir="false" />
     </list>
@@ -207,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768494643784</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=".">
+      <option name="closed" value="true" />
+      <created>1768761208762</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1768761208762</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +239,7 @@
     <MESSAGE value="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
     <MESSAGE value="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
     <MESSAGE value="Ho aggiunto la prima parte della versione italiana del file README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ho aggiunto la prima parte della versione italiana del file README.md" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
