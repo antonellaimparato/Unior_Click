@@ -20,7 +20,7 @@ self.addEventListener('install', function(e) {
 //Fornisce contenuti memorizzati nella cache quando si è offline //
 self.addEventListener('fetch', function(e) {
     e.respondWith(
-        caches.match(e.request).then(function (cache) {
+        caches.match(e.request).then(function (response) {
             return response || fetch(e.request);
         })
     );
