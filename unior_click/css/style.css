@@ -294,7 +294,9 @@ footer {
     padding: 2rem; /* imposto lo spazio tra il contenuto e il bordo*/
     border-radius: 12px; /* arrotondo i bordi dell'elemento */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* con questa proprietà applico  ombre all'elemento */
-    margin: 15% auto;  /* imposto il margine superiore e inferiorre al 15%, auto fa sì che il browser calcoli automaticamente lo spazio orizzontale, centrando l’elemento rispetto al contenitore.*/
+    margin: 15% auto;  /* imposto il margine superiore e inferiorre al 15%,
+    auto fa sì che il browser calcoli automaticamente lo spazio orizzontale,
+     centrando l’elemento rispetto al contenitore.*/
     width: 90%; /* imposto la larghezza */
     max-width: 600px; /* definisco la larghezza massima dell'elemento */
     box-sizing: border-box; /* il padding e il bordo sono inclusi nel calcolo della larghezza dell'elemento */
