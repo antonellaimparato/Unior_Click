@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage, ho aggiunto lultima parte del file README.md">
+    <list default="true" id="a72295a0-d1b4-4b4f-9178-4b1bbaa3bf45" name="Changes" comment="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unior_click/js/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/unior_click/js/functions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,6 @@
       <workItem from="1768476101056" duration="178000" />
       <workItem from="1768476291145" duration="140000" />
       <workItem from="1768489072702" duration="1463000" />
-      <workItem from="1768747944466" duration="215000" />
     </task>
     <task id="LOCAL-00001" summary="aggiunto titolo">
       <option name="closed" value="true" />
@@ -218,15 +218,7 @@
       <option name="project" value="LOCAL" />
       <updated>1768476333992</updated>
     </task>
-    <task id="LOCAL-00017" summary="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage, ho aggiunto lultima parte del file README.md">
-      <option name="closed" value="true" />
-      <created>1768742460282</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1768742460282</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +241,6 @@
     <MESSAGE value="Sono passata alle card, in particolar modo al contenuto (titolo, cosa comprende l'offerta, l'indirizzo)" />
     <MESSAGE value="Sono andato a creare il DOM ovvero il Document OBject Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
     <MESSAGE value="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
-    <MESSAGE value="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage, ho aggiunto lultima parte del file README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage, ho aggiunto lultima parte del file README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sono andato a creare il DOM ovvero il Document Object Model e successivamente ho creato tutte le convenzioni come un array di oggetti e HTML per una singola card, ho costruito la pagina con le sue 4 sezioni organizzate per sede, ho crearto la ricerca nella barra di ricerca tramite il diplayFilteredConvenzioni, poi ho creato la funzione per colorare le stelle quando ci passo sopra con il mouse, il pop-up delle recensioni e ik caricamento delle recensioni sul localStorage" />
   </component>
 </project>
