@@ -57,3 +57,16 @@ Il progetto è una PWA che  può funzionare anche senza internet:
 - Il Manifest (manifest.json): Permette di installare l'app sulla home del telefono con la visualizzazione standalone, senza la barra dell'URL.
 - Il Service Worker (sw.js): Salva nella cache i file principali durante l'installazione e fornisce i contenuti memorizzati quando si è offline.
 - Registrazione (main.js): Controlla se il browser supporta le PWA e registra il Service Worker usando la direttiva 'use strict' per evitare errori.
+
+
+
+La replicabilità del nostro progetto è garantita dal metodo di lavoro che abbiamo usato su WebStorm. Essendo un gruppo di tre persone (Martina Graziuso, Antonella Imparato, Vasyl Pavlioglo), abbiamo usato una repository su GitHub per unire i pezzi:
+•	Pull: Prima di iniziare a scrivere, scaricavamo le modifiche degli altri per evitare errori.
+•	Commit e Push: Ogni volta che completavamo una funzione (come le stelle delle recensioni o il filtro delle sedi), salvavamo e caricavamo il codice sulla repository per renderlo disponibile ai compagni.
+Questo ha permesso di avere un codice finale pulito, dove ogni file è collegato correttamente agli altri, quindi ha unito codici scritti separatamente in un unico progetto.
+Istruzioni per la replica
+Per riprodurre il progetto partendo dalla repository GitHub:
+1.	Clonazione: Scarica la repository locale sul tuo PC (es. tramite WebStorm o comando git clone).
+2.	Esegui sempre un Pull per assicurarti di avere l'ultima versione del codice unito dal team.
+3.	 Controlla che i file index.html, manifest.json e sw.js siano nella cartella principale (root), mentre gli script e gli stili siano nelle rispettive cartelle /js e /css.
+4.	Avvia il progetto tramite un server locale (WebStorm lo fa in automatico cliccando sull'icona del browser) perché il Service Worker non si registra se apri il file come semplice percorso cartella.
