@@ -64,7 +64,7 @@ La replicabilità del nostro progetto è garantita dal metodo di lavoro che abbi
 •	Pull: Prima di iniziare a scrivere, scaricavamo le modifiche degli altri per evitare errori.
 •	Commit e Push: Ogni volta che completavamo una funzione (come le stelle delle recensioni o il filtro delle sedi), salvavamo e caricavamo il codice sulla repository per renderlo disponibile ai compagni.
 Questo ha permesso di avere un codice finale pulito, dove ogni file è collegato correttamente agli altri, quindi ha unito codici scritti separatamente in un unico progetto.
-Istruzioni per la replica
+Istruzioni per la replicabilità
 Per riprodurre il progetto partendo dalla repository GitHub:
 1.	Clonazione: Scarica la repository locale sul tuo PC (es. tramite WebStorm o comando git clone).
 2.	Esegui sempre un Pull per assicurarti di avere l'ultima versione del codice unito dal team.
